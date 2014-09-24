@@ -2,11 +2,14 @@ require 'net/http'
 require 'json'
 require 'time'
 
-JENKINS_URI = URI.parse("server")
+myfile = File.open('/home/bruyer/buildout/pwddashboard.json', 'r')
+myobject = JSON.parse(myfile.read)
+
+JENKINS_URI = URI.parse(myobject['server'])
 
 JENKINS_AUTH = {
-  'name' => 'user',
-  'password' => 'pwd'
+  'name' => 'myobject["login"]',
+  'password' => 'myobject["pwd"]'
 }
 
 def get_json_for_master_jenkins()

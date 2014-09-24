@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #A04317;
+$background-color:  #1C263F;
 
 $title-color:       rgba(255, 255, 255, 1);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
@@ -14,6 +14,7 @@ $meter-background:  rgba(20, 20, 20, 1);
 
 .widget-jenkins-master {
   background-color: $background-color;
+  padding-right: 0px;
 
   input.jenkins-master{
     background-color: $meter-background;
@@ -39,24 +40,45 @@ $meter-background:  rgba(20, 20, 20, 1);
     
   ol{
     margin-top: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
   }
     
   li{
+    display:block;
     margin-top: 10px;
-    padding-bottom: 15px;
-    margin-top:60px;
-    list-style-image: url("home/Bruyer/affinitic_dashboard/asset/images/Untitled.png");
+    margin-top:45px;
+    list-style:none;
+    width:570px;
+    height:60px;
+    border-radius:5px;
   }
     
-    
-    
-  .job_name{
-    color:#33D36A;
-      
+  .blue{
+    background-color: #8D9BBF;
+    color:#8B6D22;
   }
+  .yellow{
+    background-color:#8B6D22;
+    color:#1C263F;
+  }
+  .red{
+    background-color:#A53218;
+    color:#18A572;
+  }    
+    
+ // .job_name{
+   // color:#33D36A;
+  //}
     
   p{
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-style:italic;
+    text-align: center;
     line-height: 30px;
+    position: relative;
+    top:15px;
+    
   }
 }

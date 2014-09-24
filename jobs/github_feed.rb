@@ -16,10 +16,15 @@ class GithubFeed
   # Types of events displayed on feed
   EVENT_TYPES = ["PushEvent"]
 
+  myfile = File.open('/home/bruyer/buildout/pwdgithub.json', 'r')
+  myobject = JSON.parse(myfile.read)
+
+
+
   def initialize(user, org, token)
-    @token  =  'TOKEN'
-    @user   = 'USER_NAME'
-    @org    = 'ORG_NAME'
+    @token  =  'myobject["token"]'
+    @user   = 'myobject["user"]'
+    @org    = 'myobject["org"]'
     @client = Faraday.new(:url => 'https://api.github.com/')
   end
 

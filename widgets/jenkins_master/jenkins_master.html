@@ -1,6 +1,6 @@
 <img src="http://jenkins-ci.org/sites/default/files/jenkins_logo.png">
 <ol>
-    <li data-foreach-job="jobs">
+    <li data-foreach-job="jobs" data-bind-class="job.color">
         <p class="job_name" data-bind="job.name"></p>
     </li>
 </ol>
