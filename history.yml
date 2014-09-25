@@ -1,1 +1,19 @@
---- {}
+---
+github_feed: ! 'data: {"items":[{"commit_sha":"37de9e66df668c7faf829a8c2514f6d09bad6039","message":"modification
+  du système de login","author":"EZPK","url":"https://api.github.com/repos/affinitic/affinitic.dashboard/commits/37de9e66df668c7faf829a8c2514f6d09bad6039","branch":"master","avatar_url":"https://avatars.githubusercontent.com/u/4619824?","ago":"17
+  hours ago","title":"affinitic/affinitic.dashboard"},{"commit_sha":"fc3539799fcf6cfc17c22b82d018a1a0f639b370","message":"Update
+  jenkins_master.rb","author":"EZPK","url":"https://api.github.com/repos/affinitic/affinitic.dashboard/commits/fc3539799fcf6cfc17c22b82d018a1a0f639b370","branch":"master","avatar_url":"https://avatars.githubusercontent.com/u/4619824?","ago":"1
+  days ago","title":"affinitic/affinitic.dashboard"},{"commit_sha":"89a2a722617b196e225209403f209e3795b9f6fb","message":"Split
+  on % not","author":"schminitz","url":"https://api.github.com/repos/affinitic/affinitic.zmq/commits/89a2a722617b196e225209403f209e3795b9f6fb","branch":"master","avatar_url":"https://avatars.githubusercontent.com/u/1106957?","ago":"5
+  days ago","title":"affinitic/affinitic.zmq"},{"commit_sha":"66cb26dcd415482edf8e72ed13c25f1bf2edb59b","message":"Update
+  README.md","author":"schminitz","url":"https://api.github.com/repos/affinitic/affinitic.zmq/commits/66cb26dcd415482edf8e72ed13c25f1bf2edb59b","branch":"master","avatar_url":"https://avatars.githubusercontent.com/u/1106957?","ago":"5
+  days ago","title":"affinitic/affinitic.zmq"},{"commit_sha":"4c85ed99e48f5136ce676bb600440bbee3b29ab8","message":"Force
+  parameters to be specified","author":"schminitz","url":"https://api.github.com/repos/affinitic/affinitic.zmq/commits/4c85ed99e48f5136ce676bb600440bbee3b29ab8","branch":"master","avatar_url":"https://avatars.githubusercontent.com/u/1106957?","ago":"5
+  days ago","title":"affinitic/affinitic.zmq"}],"id":"github_feed","updatedAt":1411634392}
+
+
+'
+master_jobs: ! 'data: {"jobs":[{"name":"gites.shop_-_master","url":"http://jenkins.affinitic.be/jenkins/job/gites.shop_-_master/","color":"red"},{"name":"gites.webservice","url":"http://jenkins.affinitic.be/jenkins/job/gites.webservice/","color":"red"},{"name":"logstash-deb","url":"http://jenkins.affinitic.be/jenkins/job/logstash-deb/","color":"yellow"},{"name":"puppet-affinitic","url":"http://jenkins.affinitic.be/jenkins/job/puppet-affinitic/","color":"blue"}],"id":"master_jobs","updatedAt":1411634392}
+
+
+'

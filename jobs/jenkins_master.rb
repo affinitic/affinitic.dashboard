@@ -5,11 +5,15 @@ require 'time'
 myfile = File.open('/home/bruyer/buildout/pwddashboard.json', 'r')
 myobject = JSON.parse(myfile.read)
 
+puts myobject["server"]
+puts myobject['login']
+puts myobject['pwd']
+
 JENKINS_URI = URI.parse(myobject['server'])
 
 JENKINS_AUTH = {
-  'name' => 'myobject["login"]',
-  'password' => 'myobject["pwd"]'
+  'name' => myobject["login"],
+  'password' => myobject["pwd"]
 }
 
 def get_json_for_master_jenkins()
@@ -25,7 +29,6 @@ end
 # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 
 SCHEDULER.every '100s', :first_in => 0 do |job|
-    puts "\e[33mGILLIAN\e[0m"
     thom = get_json_for_master_jenkins()
 
 send_event('master_jobs', 

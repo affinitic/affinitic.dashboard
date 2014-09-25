@@ -22,7 +22,19 @@
 	if (moment.tz !== undefined) { return moment; }
 
 	var VERSION = "0.2.2",
-		zones = {},
+		zones = {
+             "America/Mexico_City": [
+                                                 "-6:36:36 - LMT 1922_0_1_0_23_24 -6:36:36",
+                                                 "-7 - MST 1927_5_10_23 -7",
+                                                 "-6 - CST 1930_10_15 -6",
+                                                 "-7 - MST 1931_4_1_23 -7",
+                                                 "-6 - CST 1931_9 -6",
+                                                 "-7 - MST 1932_3_1 -7",
+                                                 "-6 Mexico C%sT 2001_8_30_02 -5",
+                                                 "-6 - CST 2002_1_20 -6",
+                                                 "-6 Mexico C%sT"
+                                             ]
+        },
 		links = {},
 
 		momentVersion = moment.version.split('.'),
