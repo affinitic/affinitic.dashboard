@@ -18,13 +18,8 @@ class GithubFeed
 
  def initialize(user, org, token)
  
-    myfile = File.open('/home/bruyer/buildout/pwdgithub.json', 'r')
+    myfile = File.open('../pwdgithub.json', 'r')
     myinfo = JSON.parse(myfile.read)
-
-    puts myinfo['token']
-    puts myinfo['user']
-    puts myinfo['org']
-
     @token  =  myinfo["token"]
     @user   = myinfo["user"]
     @org    = myinfo["org"]
