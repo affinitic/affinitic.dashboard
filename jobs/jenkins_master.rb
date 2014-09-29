@@ -2,13 +2,8 @@ require 'net/http'
 require 'json'
 require 'time'
 
-myfile = File.open('/home/bruyer/buildout/pwddashboard.json', 'r')
+myfile = File.open('../pwddashboard.json', 'r')
 myobject = JSON.parse(myfile.read)
-
-puts myobject["server"]
-puts myobject['login']
-puts myobject['pwd']
-
 JENKINS_URI = URI.parse(myobject['server'])
 
 JENKINS_AUTH = {
