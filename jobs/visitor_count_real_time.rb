@@ -1,12 +1,6 @@
 require 'google/api_client'
 require 'date'
 
-# Update these to match your own apps credentials
-service_account_email = '855261708634-kk3nne6f3jgig7rdeoc5c6ptb6nomqgl@developer.gserviceaccount.com' # Email of service account
-key_file = '/home/bruyer/Bureau/cerisewidget.p12' # File containing your private key
-key_secret = 'notasecret' # Password to unlock private key
-profile_id = '38650677' # AnalYtics profile ID.-55151386-1
-
 # Get the Google API client
 client = Google::APIClient.new(
   :application_name => 'CERISE',
