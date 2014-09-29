@@ -1,7 +1,11 @@
 <script type='text/javascript'>
 $(function() {
-Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":2,"size_y":2},{"col":5,"row":3,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":2,"size_y":2},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1}]')
-});</script>
+        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":2,"size_x":2,"size_y":2},{"col":5,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":2},{"col":3,"row":6,"size_x":2,"size_y":1},{"col":4,"row":4,"size_x":2,"size_y":2},{"col":5,"row":3,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":6,"row":3,"size_x":1,"size_y":1}]')
+        });
+</script>
+
+
+
 
 <% content_for :title do %>Affinitic Dashboard<% end %>
 <div class="gridster">
@@ -9,15 +13,26 @@ Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
         <div data-id="master_jobs" data-view="JenkinsMaster" data-title="Jenkins" data-description="A little description of build" data-min="0" data-max="10"></div>
+
+        </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div data-id="bitbucket" data-view="News" data-title="Bitbucket" data-interval=10"></div>
+   </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=450&from=-2hours&until=now&height=400&target=gauss_affinitic_be.load.load.longterm&target=gauss_affinitic_be.load.load.midterm&target=gauss_affinitic_be.load.load.shortterm&_salt=1358156044.062&_uniq=0.10279799595187133" data-interval="10000"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=459&height=400&_salt=1358369708.948&target=gauss_affinitic_be.memory.memory.free.value&target=gauss_affinitic_be.memory.memory.cached.value&from=-2hours" data-interval="10000"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
         <div data-id="github_feed" data-view="GithubFeed" data-title="Github News Feed"></div>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-        <div data-id="jenkinslatest" data-view="List" data-unordered="true" data-title="Jenkins Lastest" data-moreinfo="# of times said around the office"></div>
     </li>
+   <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"> 
+            <div data-id="visitor_count_real_time" data-view="Graph" data-title="Current Visitors"></div> 
+        </li>-->
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
           <div data-view="Clock"></div>
@@ -28,8 +43,5 @@ Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":
         <div data-id="nagios" data-view="Number" data-title="Nagios" data-moreinfo="In billions" data-prefix="$"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-id="bitbucket" data-view="Graph" data-title="Nagios" style="background-color:#ff9618"></div>
-    </li>
   </ul>
 </div>
