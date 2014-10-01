@@ -45,7 +45,6 @@ class GoogleAnalytics
         })
 
         @visitors << { x: Time.now.to_i, y: response.data.rows[0][0].to_i }
-        puts Time.now.to_i
         if @visitors.length > 10 then
           @visitors.delete(0)
         end
