@@ -23,7 +23,7 @@ class RssNews
 
   def latest_headlines(login='', password='', debug=false)
     request = Net::HTTP::Get.new(@path)
-    puts 'my request is :' +  request.to_s
+ #   puts 'my request is :' +  request.to_s
     if login != ''
         request.basic_auth(login, password)
     end
@@ -31,7 +31,7 @@ class RssNews
     response = @http.request(request)
     doc = Nokogiri::XML(response.body)
     if debug
-        puts doc
+  #      puts doc
     end
     news_headlines = [];
     doc.xpath('//channel/item').each do |news_item|
