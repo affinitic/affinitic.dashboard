@@ -7,7 +7,7 @@ require_relative 'rss_library'
 require 'json'
 require 'httparty'
 
-myfile = File.open('../urltrac.json', 'r')
+myfile = File.open('pass/urltrac.json', 'r')
 myurl = JSON.parse(myfile.read)
 
 news_feeds = {

@@ -18,7 +18,7 @@ class GithubFeed
 
  def initialize(user, org, token)
  
-    myfile = File.open('../pwdgithub.json', 'r')
+    myfile = File.open('pass/pwdgithub.json', 'r')
     myinfo = JSON.parse(myfile.read)
     @token  =  myinfo["token"]
     @user   = myinfo["user"]

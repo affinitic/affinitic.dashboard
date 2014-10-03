@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 require 'time'
 
-myfile = File.open('../pwddashboard.json', 'r')
+myfile = File.open('pass/pwddashboard.json', 'r')
 myobject = JSON.parse(myfile.read)
 JENKINS_URI = URI.parse(myobject['server'])
 

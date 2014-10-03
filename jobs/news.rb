@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'htmlentities'
 require_relative 'rss_library'
 
-myfile = File.open('../urlbitbucket.json', 'r')
+myfile = File.open('pass/urlbitbucket.json', 'r')
 myurl = JSON.parse(myfile.read)
 
 news_feeds = {
