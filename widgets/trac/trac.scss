@@ -1,0 +1,47 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #ec663c;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+.widget-text {
+
+  background-color: $background-color;
+}
+  .ticket{
+    border:1px solid black;
+    border-radius:10px;
+    width:350px;
+    height:70px;
+    display:center;
+    margin:30px auto;
+    background-color:#fff;
+  }
+
+  .blocker_tickets{
+    color:red;
+    font-size:1.3em;
+    font-weight:bold;
+    padding-top:5px;
+  }
+  .closed_today{
+    color:green;
+    font-size:1.3em;
+    padding-top:5px;
+    font-weight:bold;
+  }
+  .opened_today{
+    color:orange;
+    font-size:1.3em;
+    padding-top:5px;
+    font-weight:bold;
+  }
+  h3 {
+    font-size: 35px;
+  }
+
