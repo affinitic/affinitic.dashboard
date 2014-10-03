@@ -50,5 +50,6 @@ class GoogleAnalytics
         end
 
         return @visitors
+        puts @visitors
     end
 end
