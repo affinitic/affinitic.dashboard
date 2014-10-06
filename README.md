@@ -11,8 +11,9 @@ To get this dashboard working, you need to:
     *   gem 'google-api-client'
     *   gem 'nokogiri'
     *   gem 'htmlentities'
-    *   gem 'httparty'
     *   gem 'faraday'
+
+    *   gem 'httparty'
 
     *   After installing all the gems, do:
             bundle install
