@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #ec663c;
+$background-color:  #34475e;
 
 $title-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
@@ -9,39 +9,47 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 // Widget-text styles
 // ----------------------------------------------------------------------------
-.widget-text {
+.widget-trac {
 
   background-color: $background-color;
-}
-  .ticket{
-    border:1px solid black;
-    border-radius:10px;
-    width:350px;
-    height:70px;
-    display:center;
-    margin:30px auto;
-    background-color:#fff;
+  text-align: left;
+  padding-bottom: 0px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+
+  .tickets{
+    height:237px;
   }
 
+  td {
+    padding-left: 15px;
+    text-align: left;
+  }
   .blocker_tickets{
-    color:red;
-    font-size:1.3em;
-    font-weight:bold;
+    font-size:30px;
     padding-top:5px;
-  }
-  .closed_today{
-    color:green;
-    font-size:1.3em;
-    padding-top:5px;
-    font-weight:bold;
-  }
-  .opened_today{
-    color:orange;
-    font-size:1.3em;
-    padding-top:5px;
-    font-weight:bold;
+    background-color:#dc5945;
   }
 
-  .trac{
-    font-size:15px;
+  .opened_today{
+    font-size:30px;
+    padding-top:5px;
+    background-color:#f2d85a;
   }
+
+  .closed_today{
+    font-size:30px;
+    padding-top:5px;
+    background-color:#8bb73f;
+  }
+
+  .title{
+    font-size:30px;
+    margin-bottom: 25px;
+  }
+
+}
+
+#widget-trac {
+    padding: 25px 0 0;
+}

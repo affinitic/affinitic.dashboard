@@ -27,7 +27,7 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
     thom = get_json_for_master_jenkins()
 
 send_event('master_jobs', 
-    jobs: thom['jobs'][0..4]
+    jobs: thom['jobs'][0..17]
 )
 
 end

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #1E4E59;
+$background-color:  #12a7bd;
 
 $title-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
@@ -36,7 +36,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     font-size: 20px;
     margin-top:15px;
     margin-left:12px;
-    color:#F1AC24;
+    color: rgba(255, 255, 255, 0.7);
 
     .ago {
       text-align: left;
@@ -50,7 +50,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
       float: left;
       width: 70px;
       height: 70px;
-      border: 2px #DE5543 solid;
+      border: 2px rgba(255, 255, 255, 0.7) solid;
       margin-top: 11px;
     }
 
@@ -65,7 +65,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
       .gh-feed-title {
         margin: 0 0 5px 0;
         font-size:25px;
-        color: #BF5841;
+        color: #fff;
       }
 
       .gf-feed-message {
