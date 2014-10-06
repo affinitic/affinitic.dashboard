@@ -10,6 +10,7 @@ To get this dashboard working, you need to:
         -gem 'nokogiri'
         -gem 'htmlentities'
         -gem 'httparty'
+        -gem 'faraday'
     -Get some .json files:
         -pwddashboard.json with <server>, <login>, <pwd>
         -pwdgithub.json with <user>, <org>, <token>
