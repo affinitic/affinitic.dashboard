@@ -18,3 +18,9 @@ To get this dashboard working, you need to:
         -pwdgoogleapirss.json with <service_account_email>,<key_file>,<key_secret>,<profile_id>
         -urlbitbucket.json with <url>
         -urltrac.json with <url>,<login>,<password>
+
+
+If you have problem while installing nokorigi
+---------------------------------------------
+
+http://stackoverflow.com/questions/25438708/nokogiri-wont-let-me-bundle-install-in-rails
