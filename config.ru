@@ -1,7 +1,11 @@
 require 'dashing'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+    
+    myfile = File.open('pass/configru.json', 'r')
+    myinfo = JSON.parse(myfile.read)
+
+    set :auth_token, myinfo['pwd']
 
   helpers do
     def protected!
