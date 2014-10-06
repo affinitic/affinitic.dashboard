@@ -12,7 +12,6 @@ To get this dashboard working, you need to:
     *   gem 'nokogiri'
     *   gem 'htmlentities'
     *   gem 'faraday'
-
     *   gem 'httparty'
 
     *   After installing all the gems, do:
