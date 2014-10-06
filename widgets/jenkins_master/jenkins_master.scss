@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #9A9A9A;
+$background-color:  #424242;
 
 $title-color:       rgba(255, 255, 255, 1);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
@@ -15,6 +15,16 @@ $meter-background:  rgba(20, 20, 20, 1);
 .widget-jenkins-master {
   background-color: $background-color;
   padding-right: 0px;
+  color: rgba(255, 255, 255, 0.9);
+
+  .logo {
+      height: 60px;
+      width: 100%;
+      background-image: url('jenkins_logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-top: 16px;
+  }
 
   input.jenkins-master{
     background-color: $meter-background;
@@ -33,11 +43,6 @@ $meter-background:  rgba(20, 20, 20, 1);
     color: rgba(0, 0, 0, 1);
   }
   
-  img{
-      height: 60px;
-      width:200px;
-  }
-    
   ol{
     margin-top: 15px;
       margin-left: 10px;
@@ -53,22 +58,27 @@ $meter-background:  rgba(20, 20, 20, 1);
     height:60px;
     border-radius:5px;
   }
-    
+
   .blue{
-    background-color: #708A15;
-    color:#fff;
+    background-color: #8bb73f;
   }
+
   .yellow{
-    background-color:#dc5945;
-    color:#fff;
+    background-color: #f2d85a;
   }
+
   .red{
-    background-color:#8F2E1F;
-    color:#fff;
+    background-color: #dc5945;
   }
-  p{
-    font-size:35px;
-    font-style:italic;
+
+  td{
+    font-size:20px;
+    border-top: 3px solid $background-color;
   }
+
+}
+
+#master_jobs {
+    padding: 0;
 
 }

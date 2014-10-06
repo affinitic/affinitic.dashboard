@@ -1,8 +1,8 @@
- <h2 class="trac">Trac</h2>
+<h1 class="title">Trac</h2>
 
-<li data-foreach-item="items">
-  <div class="ticket">
-      <div class="title" data-bind-class="item.text"></div>
-      <div data-bind="item.value" data-bind-class="item.text"></div>
-  </div>
-</li>
+<table class="tickets">
+    <tr data-foreach-item="items" data-bind-class="item.class">
+        <td data-bind="item.value"></td>
+        <td data-bind="item.text"></td>
+    </tr>
+</table>
