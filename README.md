@@ -13,11 +13,10 @@ To get this dashboard working, you need to:
     *   gem 'htmlentities'
     *   gem 'faraday'
     *   gem 'httparty'
-    *   gem 'execjs'
 
-    *   After installing all the gems, do:
-            bundle install
+*   After installing all the gems, do: `bundle install`
 
+*   sudo apt-get install nodejs
 *   Get some .json files:
     
     *   pwddashboard.json with `<server>, <login>, <pwd>`
