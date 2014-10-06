@@ -25,6 +25,8 @@ To get this dashboard working, you need to:
     *   pwdgoogleapirss.json with `<service_account_email>, <key_file>, <key_secret>, <profile_id>`
     *   urlbitbucket.json with `<url>`
     *   urltrac.json with `<url>, <login>, <password>`
+    
+    If you get an Ruby error, try this: http://stackoverflow.com/questions/11058952/why-do-i-get-an-error-installing-the-json-gem-in-ubuntu
 
 
 If you have problem while installing nokorigi
