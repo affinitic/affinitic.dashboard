@@ -13,6 +13,7 @@ To get this dashboard working, you need to:
     *   gem 'htmlentities'
     *   gem 'faraday'
     *   gem 'httparty'
+    *   gem 'execjs'
 
     *   After installing all the gems, do:
             bundle install
