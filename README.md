@@ -15,6 +15,7 @@ To get this dashboard working, you need to:
 
         -After installing all the gems, do:
             bundle install
+
     -Get some .json files:
         -pwddashboard.json with <server>, <login>, <pwd>
         -pwdgithub.json with <user>, <org>, <token>
