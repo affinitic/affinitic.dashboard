@@ -22,7 +22,7 @@ $meter-background:  rgba(20, 20, 20, 1);
       height: 60px;
       width: 45px;
       background-image: url('jenkins_logo.png');
-      margin:auto;
+      margin-left:10px;
   }
 
   input.jenkins-master{
@@ -58,21 +58,30 @@ $meter-background:  rgba(20, 20, 20, 1);
     border-radius:5px;
   }
 
+  .bluecount{
+    position:absolute;
+    top:5px;
+    left:70px;
+    font-size:50px;
+    line-height:50px;
+    font-weight:bold;
+    color:#8bb73f;
+  }
+
   .yellowcount{
     position:absolute;
     top:5px;
-    left:40px;
+    left:170px;
     font-size:50px;
     line-height:50px;
     font-weight:bold;
     color:#B29F42;
   }
 
-
   .redcount{
     position:absolute;
     top:5px;
-    right:40px;
+    right:30px;
     font-size:50px;
     line-height:50px;
     font-weight:bold;
