@@ -44,6 +44,7 @@ $tick-color:        rgba(0, 0, 0, 0.4);
   .x_tick {
     position: absolute;
     bottom: 0;
+    display:none;
     .title {
       font-size: 20px;
       color: $tick-color;
