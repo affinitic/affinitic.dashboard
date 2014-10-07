@@ -1,6 +1,6 @@
 <script type='text/javascript'>
  $(function() {
-   Dashing.gridsterLayout('[{"col":6,"row":1,"size_x":1,"size_y":2},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":5,"row":3,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":2},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1}]')
+   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1},{"col":6,"row":2,"size_x":1,"size_y":2}]')
  });
  </script>
 
@@ -8,12 +8,9 @@
 <div class="gridster">
   <ul>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-        <div id="master_jobs" data-id="master_jobs" data-view="JenkinsMaster" data-title="Jenkins" data-description="A little description of build" data-min="0" data-max="10"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-id="bitbucket" data-view="News" data-title="Bitbucket" data-interval=10"></div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-view="Clock"></div>
+        <i id="icon-time" class="icon-time icon-background"></i>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -25,15 +22,19 @@
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&height=348&_salt=1358369708.948&target=gauss_affinitic_be.memory.memory.free.value&target=gauss_affinitic_be.memory.memory.cached.value&from=-2hours&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=12&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
         <div data-view="Webcam" data-image="http://192.168.99.123/image/jpeg.cgi" data-interval="5000"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
         <div data-id="github_feed" data-view="GithubFeed" data-title="Github News Feed"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&height=348&_salt=1358369708.948&target=gauss_affinitic_be.memory.memory.free.value&target=gauss_affinitic_be.memory.memory.cached.value&from=-2hours&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=12&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div data-id="bitbucket" data-view="News" data-title="Bitbucket" data-interval=10"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -44,10 +45,8 @@
         <div data-id="gites_analytics" data-view="Graph" data-title="Gîtes de Wallonie"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-view="Clock"></div>
-        <i id="icon-time" class="icon-time icon-background"></i>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+        <div id="master_jobs" data-id="master_jobs" data-view="JenkinsMaster" data-title="Jenkins" data-description="A little description of build" data-min="0" data-max="10"></div>
     </li>
-
   </ul>
 </div>
