@@ -15,15 +15,14 @@ $meter-background:  rgba(20, 20, 20, 1);
 .widget-jenkins-master {
   background-color: $background-color;
   padding-right: 0px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
+  font-weight:600;
 
   .logo {
       height: 60px;
-      width: 100%;
+      width: 45px;
       background-image: url('jenkins_logo.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      padding-top: 16px;
+      margin-left:10px;
   }
 
   input.jenkins-master{
@@ -42,13 +41,13 @@ $meter-background:  rgba(20, 20, 20, 1);
   .updated-at {
     color: rgba(0, 0, 0, 1);
   }
-  
+
   ol{
     margin-top: 15px;
       margin-left: 10px;
       margin-right: 10px;
   }
-    
+
   li{
     display:block;
     margin-top: 10px;
@@ -59,12 +58,42 @@ $meter-background:  rgba(20, 20, 20, 1);
     border-radius:5px;
   }
 
+  .bluecount{
+    position:absolute;
+    top:5px;
+    left:70px;
+    font-size:50px;
+    line-height:50px;
+    font-weight:bold;
+    color:#8bb73f;
+  }
+
+  .yellowcount{
+    position:absolute;
+    top:5px;
+    left:170px;
+    font-size:50px;
+    line-height:50px;
+    font-weight:bold;
+    color:#B29F42;
+  }
+
+  .redcount{
+    position:absolute;
+    top:5px;
+    right:30px;
+    font-size:50px;
+    line-height:50px;
+    font-weight:bold;
+    color:#dc5945;
+    }
+
   .blue{
     background-color: #8bb73f;
   }
 
   .yellow{
-    background-color: #f2d85a;
+    background-color: #B29F42;
   }
 
   .red{

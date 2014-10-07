@@ -29,15 +29,29 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
 
     # Cree une liste contenant uniquement les jobs jaune et rouge
     redyellowjobs = []
+    redjobs = 0
+    yellowjobs = 0
+    bluejobs = 0
 
     thom['jobs'].each do |job|
-        if  job['color'] == 'red' or job['color'] == 'yellow'
+        if job['color'] == 'red'
             redyellowjobs.push(job)
+            redjobs +=1
         end
+        if job['color'] == 'yellow'
+            redyellowjobs.push(job)
+            yellowjobs +=1
+        end
+        if job['color'] == 'blue'
+            bluejobs +=1
+        end
+
     end
 
     send_event('master_jobs',
-        jobs: redyellowjobs[0..17]
+        jobs: redyellowjobs[0..20],
+        yellowcount: yellowjobs,
+        redcount:redjobs,
+        bluecount:bluejobs
     )
 end
-
