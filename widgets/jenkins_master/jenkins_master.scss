@@ -64,6 +64,7 @@ $meter-background:  rgba(20, 20, 20, 1);
     left:70px;
     font-size:50px;
     line-height:50px;
+    text-align:center;
     font-weight:bold;
     color:#8bb73f;
   }
@@ -71,9 +72,10 @@ $meter-background:  rgba(20, 20, 20, 1);
   .yellowcount{
     position:absolute;
     top:5px;
-    left:170px;
+    left:165px;
     font-size:50px;
     line-height:50px;
+    text-align:center;
     font-weight:bold;
     color:#B29F42;
   }
@@ -81,9 +83,10 @@ $meter-background:  rgba(20, 20, 20, 1);
   .redcount{
     position:absolute;
     top:5px;
-    right:30px;
+    left:243px;
     font-size:50px;
     line-height:50px;
+    text-align:center;
     font-weight:bold;
     color:#dc5945;
     }
