@@ -44,7 +44,16 @@ class GoogleAnalytics
         'metrics' => "ga:activeVisitors",
         })
 
-        @visitors << { x: Time.now.to_i, y: response.data.rows[0][0].to_i }
+        visitors_int = 0
+
+        if response.data.rows.nil?
+            puts "No google data found"
+        else
+            visitors_int = response.data.rows[0][0].to_i
+        end
+
+
+        @visitors << { x: Time.now.to_i, y: visitors_int }
         if @visitors.length > 10 then
           @visitors.delete(0)
         end
