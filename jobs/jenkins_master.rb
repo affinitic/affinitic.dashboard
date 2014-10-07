@@ -31,25 +31,27 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
     redyellowjobs = []
     redjobs = 0
     yellowjobs = 0
+    bluejobs = 0
 
     thom['jobs'].each do |job|
-        if  job['color'] == 'red' or job['color'] == 'yellow'
+        if job['color'] == 'red'
             redyellowjobs.push(job)
-        end
-    end
-
-    thom['jobs'].each do |jobcolor|
-        if jobcolor['color'] == 'red'
             redjobs +=1
         end
-        if jobcolor['color'] == 'yellow'
+        if job['color'] == 'yellow'
+            redyellowjobs.push(job)
             yellowjobs +=1
         end
+        if job['color'] == 'blue'
+            bluejobs +=1
+        end
+
     end
 
     send_event('master_jobs',
-        jobs: redyellowjobs[0..17],
+        jobs: redyellowjobs[0..20],
         yellowcount: yellowjobs,
-        redcount:redjobs
+        redcount:redjobs,
+        bluecount:bluejobs
     )
 end
