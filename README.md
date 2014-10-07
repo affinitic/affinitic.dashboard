@@ -1,4 +1,17 @@
-Check out http://shopify.github.com/dashing for more information.
+affinitic.dashboard:
+---------------------
+
+With the affinitic.dashboard, you'll get all you need to manage your servers and development tools.
+This include:
+
+*   The last commit on Github
+*   The last commit on Bitbucket
+*   A graph displaying the number of visitor of any given website you rules
+*   The last jenkins build you've done
+*   A magnificent clock
+*   A graph displaying the important informations of your server
+*   A camera widget
+
 
 To get this dashboard working, you need to:
 --------------------------------------------
@@ -33,3 +46,9 @@ If you have problem while installing nokorigi
 ---------------------------------------------
 
 http://stackoverflow.com/questions/25438708/nokogiri-wont-let-me-bundle-install-in-rails
+
+
+Need more information ?
+-----------------------
+
+Check out http://shopify.github.com/dashing.
