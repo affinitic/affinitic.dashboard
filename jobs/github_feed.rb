@@ -16,18 +16,17 @@ class GithubFeed
   # Types of events displayed on feed
   EVENT_TYPES = ["PushEvent"]
 
- def initialize(user, org, token)
+ def initialize(user, token)
  
     myfile = File.open('pass/pwdgithub.json', 'r')
     myinfo = JSON.parse(myfile.read)
     @token  =  myinfo["token"]
     @user   = myinfo["user"]
-    @org    = myinfo["org"]
     @client = Faraday.new(:url => 'https://api.github.com/')
   end
 
   def events
-    events = json_get("/users/#{@user}/events/orgs/#{@org}")
+    events = json_get("/users/#{@user}/received_events")
     events.map do |event_json|
       event_type = event_json[:type]
       Object.const_get(event_type).new(event_json) if EVENT_TYPES.include?(event_type)
@@ -38,7 +37,7 @@ class GithubFeed
 
   def json_get(path)
     response = @client.get(path) do |req|
-      req.headers['Authorization'] = "token #{@token}"
+#       req.headers['Authorization'] = "token #{@token}"
     end
     json = JSON.parse(response.body)
 
@@ -104,13 +103,12 @@ class PushEvent < GithubEvent
 
 end
 
-user         = "your user name in the organization"
-org          = "name of your organization"
+user         = "your user name"
 token        = "token"
 hist_size    = 5
 
 SCHEDULER.every '100s', :first_in => 0 do
-  feed = GithubFeed.new(user, org, token)
+  feed = GithubFeed.new(user, token)
   events = feed.events.map do |event|
     {
       commit_sha: event.commit[:sha],
