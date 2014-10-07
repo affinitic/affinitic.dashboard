@@ -15,7 +15,8 @@ $meter-background:  rgba(20, 20, 20, 1);
 .widget-jenkins-master {
   background-color: $background-color;
   padding-right: 0px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
+  font-weight:600;
 
   .logo {
       height: 60px;
