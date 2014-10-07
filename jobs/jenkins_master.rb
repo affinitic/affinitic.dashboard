@@ -24,11 +24,20 @@ end
 # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 
 SCHEDULER.every '100s', :first_in => 0 do |job|
+    # Recupere informations sur jenkins
     thom = get_json_for_master_jenkins()
 
-send_event('master_jobs', 
-    jobs: thom['jobs'][0..17]
-)
+    # Cree une liste contenant uniquement les jobs jaune et rouge
+    redyellowjobs = []
 
+    thom['jobs'].each do |job|
+        if  job['color'] == 'red' or job['color'] == 'yellow'
+            redyellowjobs.push(job)
+        end
+    end
+
+    send_event('master_jobs',
+        jobs: redyellowjobs[0..17]
+    )
 end
 
