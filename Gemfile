@@ -8,6 +8,5 @@ gem 'htmlentities'
 gem 'httparty'
 gem 'nagiosharder', :git => 'https://github.com/railsmachine/nagiosharder.git'
 
-
 ## Remove this if you don't need a twitter widget.
 gem 'twitter', '>= 5.9.0'
