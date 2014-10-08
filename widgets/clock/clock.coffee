@@ -24,7 +24,7 @@ class Dashing.Clock extends Dashing.Widget
         '#eb802a',
         '#ebba28',
         '#e2d392',
-        '#6cefdf',
+        '#5cd1d8',
         '#66efe9',
         '#74efd4',
         '#91ecd7',
