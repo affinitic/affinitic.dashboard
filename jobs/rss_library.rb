@@ -23,7 +23,6 @@ class RssNews
 
   def latest_headlines(login='', password='', debug=false)
     request = Net::HTTP::Get.new(@path)
- #   puts 'my request is :' +  request.to_s
     if login != ''
         request.basic_auth(login, password)
     end

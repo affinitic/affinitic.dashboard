@@ -27,6 +27,5 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
   news_list.each do |news|
     headlines = news.latest_headlines(login = myurl['login'], password = myurl['password'], debug=true)
     send_event(news.widget_id, { :headlines => headlines })
-    #puts news.widget_id
   end
 end

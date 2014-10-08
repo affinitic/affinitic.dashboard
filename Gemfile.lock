@@ -1,6 +1,25 @@
+GIT
+  remote: https://github.com/railsmachine/nagiosharder.git
+  revision: 827b774a2cfd7692b1b29717b9a8c1528e16acaf
+  specs:
+    nagiosharder (0.5.0)
+      activesupport
+      hashie (~> 1.2.0)
+      httparty
+      i18n
+      nokogiri
+      rest-client
+      terminal-table
+
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.1.6)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     addressable (2.3.6)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
@@ -41,6 +60,7 @@ GEM
       retriable (>= 1.4)
       signet (>= 0.5.0)
       uuidtools (>= 2.1.0)
+    hashie (1.2.0)
     hike (1.2.3)
     htmlentities (4.3.2)
     http (0.6.2)
@@ -49,6 +69,7 @@ GEM
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    i18n (0.6.11)
     json (1.8.1)
     jwt (1.0.0)
     launchy (2.4.2)
@@ -57,6 +78,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     mime-types (2.3)
     mini_portile (0.6.0)
+    minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -98,6 +120,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    terminal-table (1.4.5)
     thin (1.6.2)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -128,6 +151,7 @@ DEPENDENCIES
   google-api-client
   htmlentities
   httparty
+  nagiosharder!
   nokogiri
   rest-client
   twitter (>= 5.9.0)
