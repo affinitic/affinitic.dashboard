@@ -19,13 +19,15 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);;
     display: block;
     position:relative;
     top:10px;
-    left:10px;
     z-index:99;
   }
 
+  div.description {
+    color: rgba(255, 255, 255, 0.8);
+  }
 
   .icon-bitbucket:before{
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.1);
     text-align:center;
     font-size:16em;
     z-index:1;
