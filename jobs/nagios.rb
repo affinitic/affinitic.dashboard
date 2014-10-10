@@ -1,15 +1,24 @@
-SCHEDULER.every '30s' do
-  require 'bundler/setup'
-  require 'nagiosharder'
+require 'bundler/setup'
+require 'nagiosharder'
+
+myfile = File.open('pass/pwdnagios.json', 'r')
+myobject = JSON.parse(myfile.read)
+
+
+SCHEDULER.every '5s' do
+
+  server = myobject['server']
+  login = myobject['login']
+  pwd = myobject['pwd']
 
   environments = {
-    prod: { url: 'http://my-prod-nagios/cgi-bin/nagios3/', username: 'nagios', password: 'nagios' },
-    dev: { url: 'http://my-dev-nagios/cgi-bin/nagios3/', username: 'nagios', password: 'nagios' },
+      prod: { url: server, username: login, password: pwd },
   }
 
+
   environments.each do |key, env|
-    nag = NagiosHarder::Site.new(env[:url], env[:username], env[:password])
-    unacked = nag.service_status(:host_status_types => [:all], :service_status_types => [:warning, :critical], :service_props => [:no_scheduled_downtime, :state_unacknowledged, :checks_enabled])
+      nag = NagiosHarder::Site.new(env[:url], env[:username], env[:password], 3,  'iso8601')
+      unacked = nag.service_status(:host_status_types => [:all], :service_status_types => [:warning, :critical], :service_props => [:no_scheduled_downtime, :state_unacknowledged, :checks_enabled])
 
     critical_count = 0
     warning_count = 0
