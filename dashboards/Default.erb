@@ -1,20 +1,3 @@
-<script type='text/javascript'>
-$(function() {
-
-Dashing.cycleGridsterLayout('[[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":5,"row":3,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":2,"size_y":1},{"col":2,"row":3,"size_x":2,"size_y":2},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":6,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":2},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":4,"row":4,"size_x":1,"size_y":1}],[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":2,"size_y":2},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":6,"row":1,"size_x":1,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":2},{"col":1,"row":4,"size_x":1,"size_y":1},{"col":2,"row":4,"size_x":1,"size_y":1}]]')
-});
-</script>
-
-
-
-
-<script type='text/javascript'>
-$(function() {
-  Dashing.cycleDashboards({timeInSeconds: 60, stagger: true});
-});
-</script>
-
-
 <% content_for :title do %>Affinitic Dashboard<% end %>
 <div class="gridster">
   <ul>
@@ -33,31 +16,16 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-id="bitbucket" data-view="News" data-title="Bitbucket" data-interval=10"></div>
+        <div id="display" data-id="display" data-view="display" data-title="display"></div>
     </li>
+
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
         <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&from=-2hours&until=now&height=348&target=gauss_affinitic_be.load.load.longterm&target=gauss_affinitic_be.load.load.midterm&target=gauss_affinitic_be.load.load.shortterm&_salt=1358156044.062&_uniq=0.10279799595187133&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-view="Webcam" data-image="http://192.168.99.123/image/jpeg.cgi" data-interval="5000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-        <div data-id="github_feed" data-view="GithubFeed" data-title="Github News Feed"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
         <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&height=348&_salt=1358369708.948&target=gauss_affinitic_be.memory.memory.free.value&target=gauss_affinitic_be.memory.memory.cached.value&from=-2hours&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=12&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-id="cerise_analytics" data-view="Graph" data-title="Cerise"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-id="gites_analytics" data-view="Graph" data-title="Gîtes de Wallonie"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
@@ -65,72 +33,8 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
-    <div data-id="nagios-prod" data-view="Nagios" data-unordered="true" data-title="Nagios Prod" </div>
+    <div data-id="nagios-prod" data-view="Nagios" data-unordered="true" data-title="Nagios Prod"></div>
     </li>
-
-  </ul>
-</div>
-
-
-
-
-
-<!--dashboard 2 -->
-
-
-
-
-<div class="gridster">
-  <ul>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-view="Clock"></div>
-        <i id="icon-time" class="icon-time icon-background"></i>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div id="widget-trac" data-id="trac-arsia" data-view="trac" data-title="Trac Arsia" data-interval=10"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div id="widget-trac" data-id="trac-affinitic" data-view="trac" data-title="Trac Affinitic" data-interval=10"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-id="bitbucket" data-view="News" data-title="Bitbucket" data-interval=10"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&from=-2hours&until=now&height=348&target=gauss_affinitic_be.load.load.longterm&target=gauss_affinitic_be.load.load.midterm&target=gauss_affinitic_be.load.load.shortterm&_salt=1358156044.062&_uniq=0.10279799595187133&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-view="Webcam" data-image="http://192.168.99.123/image/jpeg.cgi" data-interval="5000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-        <div data-id="github_feed" data-view="GithubFeed" data-title="Github News Feed"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <div data-view="Graphite" data-image="http://graphite.interne.affinitic.be/render/?width=630&height=348&_salt=1358369708.948&target=gauss_affinitic_be.memory.memory.free.value&target=gauss_affinitic_be.memory.memory.cached.value&from=-2hours&bgcolor=424242&majorGridLineColor=FFFFFF&minorGridLineColor=3eb3aa&areaMode=all&fontSize=12&fontSize=16&colorList=e95b35%2C8bb73f%2C913a69%2Cff8b17" data-interval="10000"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-id="cerise_analytics" data-view="Graph" data-title="Cerise"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-        <div data-id="gites_analytics" data-view="Graph" data-title="Gîtes de Wallonie"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-        <div id="master_jobs" data-id="master_jobs" data-view="JenkinsMaster" data-title="Jenkins" data-description="A little description of build" data-min="0" data-max="10"></div>
-    </li>
-
-    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="nagios-prod" data-view="Nagios" data-unordered="true" data-title="Nagios Prod" data-moreinfo="Unacknowledged events"></div>
-      </li>
 
   </ul>
 </div>
