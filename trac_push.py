@@ -1,8 +1,12 @@
 import json
 import requests
+import sys
+
+
+#enter trac-something
 
 dashboard_url = "http://localhost:3030"
-widget_url = dashboard_url + '/widgets/trac-arsia'
+widget_url = dashboard_url + '/widgets/' + str(sys.argv[1])
 
 datas = {
         "value":"1",
@@ -10,8 +14,12 @@ datas = {
         "text": "Blocker tickets",
     }
 
+myfile = open('pass/configru.json')
+myinfo = json.load(myfile)
+myfile.close()
 
-nested_dict = {'auth_token':"blablabla12345",
+
+nested_dict = {'auth_token':myinfo['pwd'],
                'item':datas}
 
 
