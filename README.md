@@ -52,3 +52,5 @@ Need more information ?
 -----------------------
 
 Check out http://shopify.github.com/dashing.
+
+Schminitz test api
