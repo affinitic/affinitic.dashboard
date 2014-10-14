@@ -9,9 +9,6 @@ class Dashing.trac extends Dashing.Widget
         new_data = data.item.value
 
         # Data changed
-        console.log @old_data
-        console.log new_data
-
         if @old_data != new_data
             if new_data == '0'
                 $(@node).css('background-color', '#8bb73f')
