@@ -15,9 +15,18 @@ class Dashing.trac extends Dashing.Widget
             else
                 $(@node).css('background-color', '#e3394f')
                 # Do not expose at page load
+                console.log 'Dashboard youpie'
+
                 if @old_data != ''
-                    $(@node).parent().expose()
-                    setTimeout (-> $.mask.close()), 5000
+                    el = $(@node).parent()
+                    width = el.width()
+                    el.expose(
+                        onBeforeLoad: () ->
+                            el.animate({width:width*2})
+                        onBeforeClose: () ->
+                            el.animate({width:width})
+                    )
+
+                    setTimeout (-> $.mask.close()), 10000
 
         @old_data = new_data
-
