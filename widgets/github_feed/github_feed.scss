@@ -20,36 +20,55 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);
       text-align:center;
     }
   }
+}
 
+  .github-info{
+    z-index:999;
+    width:100%;
   }
 
-  .iconcenter{
-    text-align: center;
-  }
 
   .pulls{
     padding-left:30px;
+    padding-top:20px;
     text-align:left;
-    position:relative;
-    top:45px;
+    width:100px;
   }
 
   .issues{
     margin-top:40px;
     padding-left:30px;
     text-align:left;
-    position:relative;
+    width:100px;
   }
 
   .github-issues{
-    position:relative;
-    left:75px;
     font-size:40px;
+    width:100px;
+    position:relative;
+    left:200px;
     top:-45px;
+
   }
 
   .github-pulls{
-    position:relative;
-    left:75px;
     font-size:40px;
+    width:100px;
+    position:relative;
+    left:200px;
+    top:-45px;
   }
+
+  .icon-github-sign{
+    z-index:1;
+    font-size:10em;
+    color:rgba(255,255,255,0.2);
+    text-align:center;
+    width: 100% !important;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 82px;
+}
+
