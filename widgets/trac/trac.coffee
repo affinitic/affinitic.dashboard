@@ -7,7 +7,7 @@ class Dashing.trac extends Dashing.Widget
     onData: (data) ->
 
         new_data = data.item.value
-
+        el = $(@node).parent()
         # Data changed
         if @old_data != new_data
             if new_data == '0'
@@ -20,11 +20,14 @@ class Dashing.trac extends Dashing.Widget
                 if @old_data != ''
                     el = $(@node).parent()
                     width = el.width()
+                    height = el.height()
+                    oldposition = el.position()
+                    
                     el.expose(
                         onBeforeLoad: () ->
-                            el.animate({width:width*2})
+                              el.animate({width:590,height:670, top:170, left:605})
                         onBeforeClose: () ->
-                            el.animate({width:width})
+                              el.animate({width:width, height:height, top:oldposition['top'], left:oldposition['left']})
                     )
 
                     setTimeout (-> $.mask.close()), 10000
