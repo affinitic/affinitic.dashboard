@@ -13,98 +13,43 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);
   vertical-align: top !important;
   background-color: $background-color;
 
-  pre {
-    white-space: pre-wrap;
-    word-wrap: normal;
-    margin: 0 0 0 0;
-    max-height:100px;
-  }
-
   .header {
     text-align: center;
     .title {
       color: $title-color;
       text-align:center;
     }
-
-    .name {
-      padding-left: 5px;
-    }
   }
 
-  .commit-container {
-    padding-bottom: 15px;
-    font-size: 20px;
-    margin-top:15px;
-    margin-left:12px;
-    color: rgba(255, 255, 255, 0.8);
-
-    .ago {
-      text-align: left;
-      color: #F1AC24;
-      font-size: 20px;
-      margin: 2px;
-
-    }
-
-    .avatar {
-      float: left;
-      width: 70px;
-      height: 70px;
-      border: 2px rgba(255, 255, 255, 0.7) solid;
-      margin-top: 11px;
-    }
-
-    .gh-feed-title-message {
-      padding-left: 10px;
-      float: left;
-      vertical-align: top;
-      width: 450px;
-      text-align: left;
-      padding-top: 10px;
-
-      .gh-feed-title {
-        margin: 0 0 5px 0;
-        font-size:30px;
-        color: #fff;
-      }
-
-      .gf-feed-message {
-        word-wrap:break-all;
-        font-size: 25px;
-      }
-
-    }
-
-    .clear {
-      clear:both;
-    }
-
-  }
-
-  .icon.icon-github {
-    font-size: 58px;
-    height: 58px;
-    width: 66px;
   }
 
   .iconcenter{
     text-align: center;
   }
 
-  .icon-github:before{
-    color: rgba(255,255,255,0.1);
-    text-align:center;
-    font-size:10em;
-    z-index:1;
-    position:absolute;
-    float:right;
-    top:70px;
+  .pulls{
+    padding-left:30px;
+    text-align:left;
+    position:relative;
+    top:45px;
+  }
+
+  .issues{
+    margin-top:40px;
+    padding-left:30px;
+    text-align:left;
+    position:relative;
+  }
+
+  .github-issues{
+    position:relative;
     left:75px;
-  }
-  .more-info {
-    color: $moreinfo-color;
+    font-size:40px;
+    top:-45px;
   }
 
-
-}
+  .github-pulls{
+    position:relative;
+    left:75px;
+    font-size:40px;
+  }
