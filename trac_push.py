@@ -9,7 +9,7 @@ dashboard_url = "http://localhost:3030"
 widget_url = dashboard_url + '/widgets/' + str(sys.argv[1])
 
 datas = {
-        "value":"1",
+        "value":"3",
         "class": "blocker_tickets",
         "text": "Blocker tickets",
     }
