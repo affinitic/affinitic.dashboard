@@ -21,7 +21,7 @@ def get_args():
 
 
 def get_token():
-    myfile = open('pass/configru.json')
+    myfile = open('../pass/configru.json')
     myinfo = json.load(myfile)
     myfile.close()
     return myinfo['pwd']
@@ -31,26 +31,30 @@ def main():
     args = get_args()
     token = get_token()
 
-    user = args.nickname or os.getenv('USER')
+    if(len(args.message) > 140):
+        print 'The message is too long. Max 140 caracters'
 
-    nested_dict = {'auth_token': token,
-                   'message': args.message,
-                   'nickname': user}
+    else:
+        user = args.nickname or os.getenv('USER')
 
-    json_object = json.dumps(nested_dict)
+        nested_dict = {'auth_token': token,
+                       'message': args.message,
+                       'nickname': user}
 
-    headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
+        json_object = json.dumps(nested_dict)
 
-    try:
-        requests.post(WIDGET_URL, json_object, headers=headers)
-    except IOError as e:
-        if hasattr(e, 'reason'):
-            print "connection error:", e.reason
-        elif hasattr(e, 'code'):
-            print "http error:", e.code
-            print e.read()
-        else:
-            print "error:", e
+        headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
+
+        try:
+            requests.post(WIDGET_URL, json_object, headers=headers)
+        except IOError as e:
+            if hasattr(e, 'reason'):
+                print "connection error:", e.reason
+            elif hasattr(e, 'code'):
+                print "http error:", e.code
+                print e.read()
+            else:
+                print "error:", e
 
 
 if __name__ == "__main__":
