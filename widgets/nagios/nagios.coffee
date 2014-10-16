@@ -1,9 +1,32 @@
 class Dashing.Nagios extends Dashing.Widget
 
-  ready: ->
-    # This is fired when the widget is done being rendered
+    constructor: ->
+        super
+        @old_data = ''
+        @old_data2 = ''
+    onData: (data) ->
 
-  onData: (data) ->
-    # Handle incoming data
-    # You can access the html node of this widget with `@node`
-    # Example: $(@node).fadeOut().fadeIn() will make the node flash each time data comes in.
+        new_data = data.criticals
+        new_data2 = data.warnings
+        el = $(@node).parent()
+        # Data changed
+        if @old_data != new_data or @old_data2 != new_data2
+        # Do not expose at page load
+
+            if @old_data != '' or @old_data2 != ''
+                el = $(@node).parent()
+                width = el.width()
+                height = el.height()
+                oldposition = el.position()
+
+                el.expose(
+                    onBeforeLoad: () ->
+                            el.animate({width:590,height:670, top:170, left:605})
+                    onBeforeClose: () ->
+                            el.animate({width:width, height:height, top:oldposition['top'], left:oldposition['left']})
+                )
+
+                setTimeout (-> $.mask.close()), 10000
+
+        @old_data = new_data
+        @old_data2 = new_data2
