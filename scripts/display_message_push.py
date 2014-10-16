@@ -7,16 +7,21 @@ import requests
 import argparse
 
 WIDGET_URL = 'http://localhost:3030/widgets/display'
+MAX_MESSAGE_LENGTH = 40
 
 
-def get_args():
-    help_message = """
-    Allow to send message to the dashboard.
-    Nickname will take your shell user by default.
-    """
-    parser = argparse.ArgumentParser(description=help_message)
+def get_users():
+    users_file = open('pass/affinitic_users.json')
+    users = json.load(users_file)
+    users_file.close()
+    return users
+
+
+def get_args(allowed_users):
+    parser = argparse.ArgumentParser(description="Allow to send message to the dashboard.")
     parser.add_argument('-m', '--message', required=True)
-    parser.add_argument('-n', '--nickname', required=False, help="Use shell user by default")
+    parser.add_argument('-u', '--user', required=True,
+                        choices=allowed_users)
     return parser.parse_args()
 
 
@@ -28,14 +33,22 @@ def get_token():
 
 
 def main():
-    args = get_args()
+    users = get_users()
+    args = get_args(users.keys())
     token = get_token()
 
-    user = args.nickname or os.getenv('USER')
+    if len(args.message) > MAX_MESSAGE_LENGTH:
+        raise Exception("Message too long (max %s chars)" % MAX_MESSAGE_LENGTH)
+
+    messages = []
+    for user in users:
+        messages.append({'message': user == args.user and args.message or '',
+                         'nickname': users[user]['nick'],
+                         'user': user})
 
     nested_dict = {'auth_token': token,
-                   'message': args.message,
-                   'nickname': user}
+                   'messages': messages,
+                   'actualuser': args.user}
 
     json_object = json.dumps(nested_dict)
 
