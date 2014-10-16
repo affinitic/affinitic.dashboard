@@ -1,26 +1,57 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
 import json
 import requests
+import argparse
 
-dashboard_url = "http://localhost:3030"
-widget_url = dashboard_url + '/widgets/display'
-
-thom = raw_input('Entrez votre message: ')
-nested_dict = {'auth_token' : 'blablabla12345',
-               'message':thom}
-
-json_object = json.dumps(nested_dict)
+WIDGET_URL = 'http://localhost:3030/widgets/display'
 
 
-headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
+def get_args():
+    help_message = """
+    Allow to send message to the dashboard.
+    Nickname will take your shell user by default.
+    """
+    parser = argparse.ArgumentParser(description=help_message)
+    parser.add_argument('-m', '--message', required=True)
+    parser.add_argument('-n', '--nickname', required=False, help="Use shell user by default")
+    return parser.parse_args()
 
-try:
-     requests.post(widget_url, json_object, headers=headers)
-     print json_object
-except IOError as e:
-    if hasattr(e, 'reason'):
-        print "connection error:", e.reason
-    elif hasattr(e, 'code'):
-        print "http error:", e.code
-        print e.read()
-    else:
-        print "error:", e
+
+def get_token():
+    myfile = open('pass/configru.json')
+    myinfo = json.load(myfile)
+    myfile.close()
+    return myinfo['pwd']
+
+
+def main():
+    args = get_args()
+    token = get_token()
+
+    user = args.nickname or os.getenv('USER')
+
+    nested_dict = {'auth_token': token,
+                   'message': args.message,
+                   'nickname': user}
+
+    json_object = json.dumps(nested_dict)
+
+    headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
+
+    try:
+        requests.post(WIDGET_URL, json_object, headers=headers)
+    except IOError as e:
+        if hasattr(e, 'reason'):
+            print "connection error:", e.reason
+        elif hasattr(e, 'code'):
+            print "http error:", e.code
+            print e.read()
+        else:
+            print "error:", e
+
+
+if __name__ == "__main__":
+    main()
