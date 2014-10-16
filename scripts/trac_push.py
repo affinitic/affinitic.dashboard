@@ -7,7 +7,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser(description='You need to add some arguments here.')
-    parser.add_argument('-t', '--tracname', required=True)
+    parser.add_argument('-t', '--tracname', required=True, choices=['trac-arsia', 'trac-affinitic'])
     parser.add_argument('-v', '--value', type=str, required=True)
 
     print parser.parse_args()
