@@ -1,30 +1,37 @@
 import json
 import requests
+import argparse
+
+#   enter trac-something
+
+
+def get_args():
+    parser = argparse.ArgumentParser(description='You need to add some arguments here.')
+    parser.add_argument('-t', '--tracname', required=True)
+    parser.add_argument('-v', '--value', type=str, required=True)
+
+    print parser.parse_args()
+    return parser.parse_args()
+
+args = get_args()
 
 dashboard_url = "http://localhost:3030"
-widget_url = dashboard_url + '/widgets/nouzotre'
+widget_url = dashboard_url + '/widgets/' + args.tracname
 
-datas ={
-    "milestone":{
-        "prestation":"bonjour",
-        "date":"10 03 2018",
-        "deadlines":"Blocker tickets",
-        "photo":"assets/logo.png"
-        }
-}
+datas = {"value": args.value, "class": "blocker_tickets",
+"text": "Blocker tickets"}
 
-mynouzotre = open('pass/nouzotre.json')
-test = json.load(mynouzotre)
-mynouzotre.close()
+myfile = open('../pass/configru.json')
+myinfo = json.load(myfile)
+myfile.close()
 
 
-nested_dict = {"auth_token":test["pwd"],
-               "item":datas}
+nested_dict = {'auth_token': myinfo['pwd'],
+               'item': datas}
 
 
 json_object = json.dumps(nested_dict)
-headers = {"Content-Typer": "application/json" }
-
+headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
 
 try:
     requests.post(widget_url, json_object, headers=headers)
