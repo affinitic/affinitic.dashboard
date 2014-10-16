@@ -1,20 +1,30 @@
 import json
 import requests
-import sys
+import argparse
 
 
 #enter trac-something
 
+def get_args():
+    parser = argparse.ArgumentParser(description='You need to add some arguments here.')
+    parser.add_argument('-t', '--tracname', required=True)
+    parser.add_argument('-v', '--value', type=str, required=True)
+
+    print parser.parse_args()
+    return parser.parse_args()
+
+args = get_args()
+
 dashboard_url = "http://localhost:3030"
-widget_url = dashboard_url + '/widgets/' + str(sys.argv[1])
+widget_url = dashboard_url + '/widgets/' + args.tracname
 
 datas = {
-        "value":"3",
+        "value":args.value,
         "class": "blocker_tickets",
         "text": "Blocker tickets",
     }
 
-myfile = open('pass/configru.json')
+myfile = open('../pass/configru.json')
 myinfo = json.load(myfile)
 myfile.close()
 
@@ -38,4 +48,3 @@ except IOError as e:
         print e.read()
     else:
         print "error:", e
-
