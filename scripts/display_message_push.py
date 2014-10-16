@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 import json
 import requests
 import argparse
@@ -26,7 +25,7 @@ def get_args(allowed_users):
 
 
 def get_token():
-    myfile = open('../pass/configru.json')
+    myfile = open('pass/configru.json')
     myinfo = json.load(myfile)
     myfile.close()
     return myinfo['pwd']
@@ -50,24 +49,20 @@ def main():
                    'messages': messages,
                    'actualuser': args.user}
 
-        nested_dict = {'auth_token': token,
-                       'message': args.message,
-                       'nickname': user}
+    json_object = json.dumps(nested_dict)
 
-        json_object = json.dumps(nested_dict)
+    headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
 
-        headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'}
-
-        try:
-            requests.post(WIDGET_URL, json_object, headers=headers)
-        except IOError as e:
-            if hasattr(e, 'reason'):
-                print "connection error:", e.reason
-            elif hasattr(e, 'code'):
-                print "http error:", e.code
-                print e.read()
-            else:
-                print "error:", e
+    try:
+        requests.post(WIDGET_URL, json_object, headers=headers)
+    except IOError as e:
+        if hasattr(e, 'reason'):
+            print "connection error:", e.reason
+        elif hasattr(e, 'code'):
+            print "http error:", e.code
+            print e.read()
+        else:
+            print "error:", e
 
 
 if __name__ == "__main__":
