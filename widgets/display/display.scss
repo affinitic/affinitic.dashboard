@@ -10,12 +10,13 @@ $background-color:  #e95b35;
 
   background-color: $background-color;
 
-     h3{
-        text-align:center;
-        position:relative;
-        top:30px;
-        font-size:60px;
-    }
+  div.display-message {
+      margin-left:10px;
+      margin-right:10px;
+      text-align:left;
+      position:relative;
+      font-size:25px;
+  }
 
 }
 
