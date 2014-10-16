@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:#049C6E ;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+.widget-nouzotre {
+
+  background-color: $background-color;
+  text-align: left;
+  padding-bottom: 0px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+
+  .title{
+    font-size:30px;
+    margin-bottom: 25px;
+  }
+
+    img{
+        width:25px;
+        height:25px;
+        margin-top:30px;
+    }
+}
+#widget-trac {
+    padding: 25px 0 0;
+}
