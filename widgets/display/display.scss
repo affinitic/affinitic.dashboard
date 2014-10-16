@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #e95b35;
+$background-color:  #9c4274;
 
 // ----------------------------------------------------------------------------
 // Widget-clock styles
@@ -16,6 +16,10 @@ $background-color:  #e95b35;
       text-align:left;
       position:relative;
       font-size:25px;
+  }
+
+  div.display-message span.nickname {
+      color:rgba(255,255,255, 0.7);
   }
 
 }
