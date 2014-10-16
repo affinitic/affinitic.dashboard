@@ -13,7 +13,7 @@ class Dashing.trac extends Dashing.Widget
             if new_data == '0'
                 $(@node).css('background-color', '#8bb73f')
             else
-                $(@node).css('background-color', '#e3394f')
+                $(@node).css('background-color', '#D23125')
                 # Do not expose at page load
                 console.log 'Dashboard youpie'
 
