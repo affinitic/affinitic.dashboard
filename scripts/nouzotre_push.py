@@ -18,10 +18,11 @@ args = get_args()
 dashboard_url = "http://localhost:3030"
 widget_url = dashboard_url + '/widgets/' + args.tracname
 
-datas = {"value": args.value, "class": "blocker_tickets",
-"text": "Blocker tickets"}
+datas = {"value": args.value,
+         "class": "blocker_tickets",
+         "text": "Blocker tickets"}
 
-myfile = open('../pass/configru.json')
+myfile = open('pass/configru.json')
 myinfo = json.load(myfile)
 myfile.close()
 
