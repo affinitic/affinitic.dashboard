@@ -7,7 +7,7 @@ widget_url = dashboard_url + '/widgets/nouzotre'
 datas = {
     "milestone": {
         "prestation": "bonjour",
-        "date": "10 03 2018",
+        "date": "11 09 2018",
         "deadlines": "Blocker tickets",
         "photo": "assets/logo.png"
         }
