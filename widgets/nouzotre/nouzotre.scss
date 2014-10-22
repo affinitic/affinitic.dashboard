@@ -21,13 +21,28 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     font-size:30px;
     margin-bottom: 25px;
   }
+  table{
+    width:90%;
+    margin-left:10px;
+  }
+
+  .badworkerLogin{
+    font-size:1.3em;
+    padding-left:30px;
+  }
+
+  .badworkerDays{
+    padding-left:40px;
+  }
+
+  td{
+    text-align: left;
+    padding-top:10px;
+  }
+
 
     img{
         width:25px;
         height:25px;
-        margin-top:30px;
     }
-}
-#widget-trac {
-    padding: 25px 0 0;
 }

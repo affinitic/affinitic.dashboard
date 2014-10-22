@@ -1,3 +1,9 @@
 <h1 title='Nouzotre' data-bind="title"></h1>
-<h3 data-bind='item.milestone.date'></h3>
-<img data-bind-src='item.milestone.photo' />
+<table>
+    <tr data-foreach-badworker='badworker'>
+        <td><img data-bind-src=''/></td>
+        <td data-bind='badworker.login' class='badworkerLogin'></td>
+        <td data-bind='badworker.days' class="badworkerDays"></td>
+    </tr>
+</table>
+

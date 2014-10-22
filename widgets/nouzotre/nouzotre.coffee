@@ -9,6 +9,8 @@ class Dashing.nouzotre extends Dashing.Widget
         new_data = data.item.milestone.date
         new_data2 = data.item.milestone.photo
         el = $(@node).parent()
+
+
         # Data changed
         if @old_data != new_data or @old_data2 != new_data2
         # Do not expose at page load
