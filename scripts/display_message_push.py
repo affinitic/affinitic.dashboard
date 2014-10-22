@@ -47,7 +47,7 @@ def main():
 
     nested_dict = {'auth_token': token,
                    'messages': messages,
-                   'actualuser': args.user}
+                   'actualiser': args.user}
 
     json_object = json.dumps(nested_dict)
 
