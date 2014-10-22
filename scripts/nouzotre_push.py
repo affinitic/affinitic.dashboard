@@ -5,12 +5,17 @@ dashboard_url = "http://localhost:3030"
 widget_url = dashboard_url + '/widgets/nouzotre'
 
 datas = {
-    "milestone": {
-        "prestation": "bonjour",
-        "date": "11 09 2018",
-        "deadlines": "Blocker tickets",
-        "photo": "assets/logo.png"
-        }
+    "deadlines":[{
+        "date": "2014-11-01",
+        "name": "Finir menu",
+        "status": "opened/closed",
+        "contractual": "True/False",
+        "url": "http://www.nouzotre.affinitic.be"
+    }],
+    "hoursOfWork":[{
+        "login": "alain",
+        "days": 0
+    }]
 }
 
 
