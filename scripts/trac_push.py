@@ -16,7 +16,6 @@ def get_args():
 args = get_args()
 
 dashboard_url = "http://localhost:3030"
-#dashboard_url = "http://archimede.interne.affinitic.be:3030/"
 widget_url = dashboard_url + '/widgets/' + args.tracname
 
 
