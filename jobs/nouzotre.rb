@@ -4,7 +4,7 @@ require 'time'
 
 myfile = File.open('pass/getnouzotrejson.json', 'r')
 myobject = JSON.parse(myfile.read)
-NOUZOTRE_URI = URI.parse(myobject['server'])
+NOUZOTRED_URI = URI.parse(myobject['server'])
 
 NOUZOTRE_AUTH ||= {
   'name' => myobject["login"],
@@ -12,7 +12,7 @@ NOUZOTRE_AUTH ||= {
 }
 
 def get_json_for_nouzotre()
-    http = Net::HTTP.new(NOUZOTRE_URI.host, NOUZOTRE_URI.port)
+    http = Net::HTTP.new(NOUZOTRED_URI.host, NOUZOTRED_URI.port)
     request = Net::HTTP::Get.new("/last-encodages-json")
 
     if NOUZOTRE_AUTH['name']
