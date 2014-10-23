@@ -1,10 +1,8 @@
 <script type='text/javascript'>
 $(function() {
-    Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":2,"size_y":2},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":6,"row":1,"size_x":1,"size_y":2},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1}]')
+Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":2,"size_y":2},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":6,"row":1,"size_x":1,"size_y":2},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1}]')
 });
 </script>
-
-
 
 <% content_for :title do %>Affinitic Dashboard<% end %>
 <div class="gridster">
@@ -50,6 +48,10 @@ $(function() {
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
         <div id="nouzotre" data-id="nouzotre" data-view="nouzotre" data-title="Nouzotre"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <div id="ndeadlines" data-id="ndeadlines" data-view="ndeadlines" data-title="Nouzotre Deadlines"></div>
     </li>
 
   </ul>
