@@ -33,5 +33,29 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 }
 
 #widget-trac {
+    padding:0;
+    text-align:center;
+}
+
+div.blocker_tickets{
     padding: 25px 0 0;
+    background-color:#D23125;
+    height:100%;
+    width:100%;
+}
+
+div.alright{
+    padding: 25px 0 0;
+    background-color:#8bb73f;
+    height:100%;
+    width:100%;
+}
+
+h3.arsiah3{
+    padding-top:40px;
+}
+
+.valeur{
+    padding-top:20px;
+    font-size:4.3em;
 }

@@ -16,11 +16,18 @@ def get_args():
 args = get_args()
 
 dashboard_url = "http://localhost:3030"
+#dashboard_url = "http://archimede.interne.affinitic.be:3030/"
 widget_url = dashboard_url + '/widgets/' + args.tracname
+
+
 
 datas = {"value": args.value,
          "class": "blocker_tickets",
          "text": "Blocker tickets"}
+
+if datas['value'] == '0':
+    datas['class'] = 'alright'
+    datas['text'] = 'No problem'
 
 myfile = open('pass/configru.json')
 myinfo = json.load(myfile)
