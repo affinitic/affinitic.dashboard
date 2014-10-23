@@ -6,8 +6,8 @@ class Dashing.nouzotre extends Dashing.Widget
         @old_data2 = ''
     onData: (data) ->
 
-        new_data = data.item.milestone.date
-        new_data2 = data.item.milestone.photo
+        new_data = data.login
+        new_data2 = data.days
         el = $(@node).parent()
 
 
