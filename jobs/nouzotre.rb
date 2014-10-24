@@ -25,18 +25,19 @@ end
 
 SCHEDULER.every '100s', :first_in => 0 do |badworker|
     lastEncodage = get_json_for_nouzotre()
-
     notEncodedWorker = []
 
     lastEncodage.each do |badworker|
         if badworker['days'] >= 2
+            badworker['picture'] = 'assets/'+ badworker['login']+'.jpg'
             notEncodedWorker.push(badworker)
         end
     end
 
     badworkerSorted = notEncodedWorker.sort_by{|k| k['days']}.reverse
+    chosenOnes = badworkerSorted[0..3]
 
     send_event('nouzotre',
-        badworker:badworkerSorted
+        badworker:chosenOnes
     )
 end
