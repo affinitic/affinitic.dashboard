@@ -6,7 +6,6 @@ import requests
 import argparse
 
 WIDGET_URL = 'http://localhost:3030/widgets/display'
-MAX_MESSAGE_LENGTH = 40
 
 
 def get_users():
@@ -35,9 +34,6 @@ def main():
     users = get_users()
     args = get_args(users.keys())
     token = get_token()
-
-    if len(args.message) > MAX_MESSAGE_LENGTH:
-        raise Exception("Message too long (max %s chars)" % MAX_MESSAGE_LENGTH)
 
     messages = []
     for user in users:

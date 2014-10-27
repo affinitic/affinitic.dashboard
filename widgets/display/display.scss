@@ -13,19 +13,41 @@ $background-color:  #9c4274;
   div.display-message {
       margin-left:10px;
       margin-right:10px;
-      margin-top:35px;
+      margin-top:10px;
       text-align:left;
       position:relative;
-      font-size:25px;
+      font-size:30px;
   }
 
   div.display-message span.nickname {
       color:white;
   }
 
-  .usermessage{
-      padding-bottom:45px;
-      display:block;
+  table{
+    margin-left:10px;
+    width:90%;
   }
+
+  td.message{
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 380px;
+  }
+
+  td.nickname{
+      width: 100px;
+  }
+
 }
 
+// Allow to overflow div in display: table-cell;
+div.widget-display-message-absolute {
+  position: absolute;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
