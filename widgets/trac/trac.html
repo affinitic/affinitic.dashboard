@@ -2,7 +2,9 @@
     <div class="trac-content">
         <h1 class="title" data-bind="title"></h1>
 
-        <div class="valeur" data-bind="item.value"></div>
+        <div class="valeur">
+          <a target="_blank" data-bind-href="redirect" data-bind="item.value"></a>
+        </div>
         <h3 class="arsiah3">Ticket blocker</h3>
     </div>
 </div>
