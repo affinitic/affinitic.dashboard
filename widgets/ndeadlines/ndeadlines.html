@@ -1,9 +1,9 @@
 <div class="widget-ndeadlines-absolute">
-    <h1 title='Nouzotre' data-bind="title"></h1>
+    <h1 title="Nouzotre" data-bind="title"></h1>
     <table>
-        <tr data-foreach-deadline='deadline'>
-            <td data-bind-class="deadline.css" data-bind='deadline.date' class="deadlinedate"></td>
-            <td data-bind='deadline.title' class="deadlinetitle"></td>
+        <tr data-foreach-deadline="deadline">
+            <td data-bind-class="deadline.css" data-bind="deadline.date" class="deadlinedate"></td>
+            <td class="deadlinetitle"><a target="_blank" data-bind="deadline.title" data-bind-href="deadline.url"></a></td>
         </tr>
     </table>
 </div>
