@@ -21,7 +21,6 @@ def get_json_for_nouzotre()
     response = http.request(request)
     JSON.parse(response.body)
 end
-## the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 
 SCHEDULER.every '100s', :first_in => 0 do |badworker|
     lastEncodage = get_json_for_nouzotre()

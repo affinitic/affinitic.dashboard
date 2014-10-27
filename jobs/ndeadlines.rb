@@ -1,3 +1,4 @@
+require 'date'
 require 'net/http'
 require 'json'
 require 'time'
@@ -21,7 +22,6 @@ def get_json_for_nouzotreDeadlines()
     response = http.request(request)
     JSON.parse(response.body)
 end
-## the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 
 SCHEDULER.every '100s', :first_in => 0 do |deadline|
     deadlines = get_json_for_nouzotreDeadlines()
@@ -29,7 +29,10 @@ SCHEDULER.every '100s', :first_in => 0 do |deadline|
     deadlineOpen = []
     
     deadlines.each do |deadline|
-        if deadline['closed'] == false
+        dl_date = Date.parse(deadline['date'])
+        dl_date_limit = Date.today.advance(:months => 1)
+
+        if deadline['closed'] == false && dl_date < dl_date_limit
             if deadline['contractual'] == true 
                 deadline['css']= 'contractual'
             end
