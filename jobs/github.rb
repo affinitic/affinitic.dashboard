@@ -17,7 +17,9 @@ end
 
 
 SCHEDULER.every '100s', :first_in => 0 do
-  send_event('github_feed', pulls:pulls, issues:issuesCount)
+  send_event('github_feed', pulls:pulls, issues:issuesCount,
+             pulls_redirect: "https://github.com/pulls?user=affinitic",
+             issues_redirect: "https://github.com/issues?user=affinitic")
 end
 
 
