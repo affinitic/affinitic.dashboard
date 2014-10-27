@@ -41,6 +41,6 @@ SCHEDULER.every '5s' do
       end
     end
 
-    send_event('nagios-' + key.to_s, { criticals: critical_count, warnings: warning_count, status: status })
+    send_event('nagios-' + key.to_s, { criticals: critical_count, warnings: warning_count, status: status, redirect: myobject['redirect']})
   end
 end
