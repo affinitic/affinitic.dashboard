@@ -25,6 +25,7 @@ end
 
 SCHEDULER.every '100s', :first_in => 0 do |deadline|
     deadlines = get_json_for_nouzotreDeadlines()
+    deadlines = deadlines.sort { |a, b| a['date'] <=> b['date'] }
 
     deadlineOpen = []
     
@@ -36,6 +37,7 @@ SCHEDULER.every '100s', :first_in => 0 do |deadline|
             if deadline['contractual'] == true 
                 deadline['css']= 'contractual'
             end
+            deadline['date'] = dl_date.strftime('%d-%m-%Y')
             deadlineOpen.push(deadline)
         end
     end

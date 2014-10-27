@@ -30,7 +30,10 @@ div.widget-ndeadlines {
 
   td{
     text-align: left;
-    padding-top:10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 440px;
   }
 
   .deadlinedate{
@@ -43,7 +46,7 @@ div.widget-ndeadlines {
   }
 
   .contractual{
-    font-weight:bold;
+    text-decoration: underline;
   }
 
   img{
