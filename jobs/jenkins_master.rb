@@ -49,7 +49,7 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
     end
 
     send_event('master_jobs',
-        jobs: redyellowjobs[0..20],
+        jobs: redyellowjobs[0..17],
         yellowcount: yellowjobs,
         redcount:redjobs,
         bluecount:bluejobs
