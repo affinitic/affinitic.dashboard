@@ -11,7 +11,6 @@ cp -r public home/dashing/
 cp -r scripts home/dashing/
 cp -r widgets home/dashing/
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers dashing
-GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers dashing
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers rest-client
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers google-api-client
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers nokogiri
@@ -28,4 +27,4 @@ export GEM_HOME="/home/dashing"
 exec \${GEM_HOME}/bin/dashing \$@
 EOF
 chmod 755 etc/init.d/dashing
-fpm -s dir -t deb -C . --deb-user root --deb-group root --depends ruby1.9.3 --name guard --version 0.1 --description "Dashing for affinitic" home etc
+fpm -s dir -t deb -C . --deb-user root --deb-group root --depends ruby1.9.3 --name dashing-affinitic --version 0.1 --description "Dashing for affinitic" home etc
