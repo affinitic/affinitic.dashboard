@@ -5,7 +5,7 @@ myfile = File.open('pass/pwdnagios.json', 'r')
 myobject = JSON.parse(myfile.read)
 
 
-SCHEDULER.every '5s' do
+SCHEDULER.every '60s' do
 
   server = myobject['server']
   login = myobject['login']

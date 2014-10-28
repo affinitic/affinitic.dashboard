@@ -5,25 +5,25 @@ require 'time'
 
 myfile = File.open('pass/getnouzotrejson.json', 'r')
 myobject = JSON.parse(myfile.read)
-NOUZOTRE_URI = URI.parse(myobject['server'])
+NOUZOTRE_URI_NDEADLINES = URI.parse(myobject['server'])
 
-NOUZOTRE_AUTH ||= {
+NOUZOTRE_AUTH_NDEADLINES ||= {
   'name' => myobject["login"],
   'password' => myobject["pass"]
 }
 
 def get_json_for_nouzotreDeadlines()
-    http = Net::HTTP.new(NOUZOTRE_URI.host, NOUZOTRE_URI.port)
+    http = Net::HTTP.new(NOUZOTRE_URI_NDEADLINES.host, NOUZOTRE_URI_NDEADLINES.port)
     request = Net::HTTP::Get.new("/next-deadlines-json")
 
-    if NOUZOTRE_AUTH['name']
-        request.basic_auth(NOUZOTRE_AUTH['name'], NOUZOTRE_AUTH['password'])
+    if NOUZOTRE_AUTH_NDEADLINES['name']
+        request.basic_auth(NOUZOTRE_AUTH_NDEADLINES['name'], NOUZOTRE_AUTH_NDEADLINES['password'])
     end
     response = http.request(request)
     JSON.parse(response.body)
 end
 
-SCHEDULER.every '100s', :first_in => 0 do |deadline|
+SCHEDULER.every '100s', :first_in => 0 do
     deadlines = get_json_for_nouzotreDeadlines()
     deadlines = deadlines.sort { |a, b| a['date'] <=> b['date'] }
 

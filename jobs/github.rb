@@ -21,5 +21,3 @@ SCHEDULER.every '100s', :first_in => 0 do
              pulls_redirect: "https://github.com/pulls?user=affinitic",
              issues_redirect: "https://github.com/issues?user=affinitic")
 end
-
-

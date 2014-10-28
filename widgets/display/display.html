@@ -1,9 +1,9 @@
 <div class="widget-display-message-absolute">
     <div class="display-message">
         <table>
-            <tr data-foreach-message="messages" data-bind-class="message.user">
+            <tr data-foreach-message="messages">
                 <td class="nickname">
-                    <span data-bind="message.nickname"></span>:&nbsp;
+                    <span data-bind="message.login"></span>:&nbsp;
                 </td>
                 <td class="message" data-bind="message.message"></td>
             </tr>
