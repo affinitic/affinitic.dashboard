@@ -38,7 +38,7 @@ def main():
     messages = []
     for user in users:
         messages.append({'message': user == args.user and args.message or '',
-                         'nickname': users[user]['nick'],
+                         'login': users[user]['nick'],
                          'user': user})
 
     nested_dict = {'auth_token': token,
