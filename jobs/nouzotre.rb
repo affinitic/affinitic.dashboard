@@ -4,25 +4,25 @@ require 'time'
 
 myfile = File.open('pass/getnouzotrejson.json', 'r')
 myobject = JSON.parse(myfile.read)
-NOUZOTRED_URI = URI.parse(myobject['server'])
+NOUZOTRED_URI_NOUZOTRE = URI.parse(myobject['server'])
 
-NOUZOTRE_AUTH ||= {
+NOUZOTRE_AUTH_NOUZOTRE ||= {
   'name' => myobject["login"],
   'password' => myobject["pass"]
 }
 
 def get_json_for_nouzotre()
-    http = Net::HTTP.new(NOUZOTRED_URI.host, NOUZOTRED_URI.port)
+    http = Net::HTTP.new(NOUZOTRED_URI_NOUZOTRE.host, NOUZOTRED_URI_NOUZOTRE.port)
     request = Net::HTTP::Get.new("/last-encodages-json")
 
-    if NOUZOTRE_AUTH['name']
-        request.basic_auth(NOUZOTRE_AUTH['name'], NOUZOTRE_AUTH['password'])
+    if NOUZOTRE_AUTH_NOUZOTRE['name']
+        request.basic_auth(NOUZOTRE_AUTH_NOUZOTRE['name'], NOUZOTRE_AUTH_NOUZOTRE['password'])
     end
     response = http.request(request)
     JSON.parse(response.body)
 end
 
-SCHEDULER.every '100s', :first_in => 0 do |badworker|
+SCHEDULER.every '100s', :first_in => 0 do
     lastEncodage = get_json_for_nouzotre()
     notEncodedWorker = []
 

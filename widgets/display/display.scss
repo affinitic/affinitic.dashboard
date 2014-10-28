@@ -16,7 +16,7 @@ $background-color:  #9c4274;
       margin-top:10px;
       text-align:left;
       position:relative;
-      font-size:30px;
+      font-size:25px;
   }
 
   div.display-message span.nickname {
@@ -24,20 +24,17 @@ $background-color:  #9c4274;
   }
 
   table{
-    margin-left:10px;
-    width:90%;
+    width:100%;
   }
 
   td.message{
     text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 380px;
+    overflow-y: hidden;
   }
 
   td.nickname{
       width: 100px;
+      vertical-align: top;
   }
 
 }
