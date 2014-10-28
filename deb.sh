@@ -13,7 +13,7 @@ cp -r widgets home/dashing/
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers dashing
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers rest-client
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers google-api-client
-GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers nokogiri
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers nokogiri -- --with-xml2-include=/usr/include/libxml2 --use-system-libraries
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers htmlentities
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers httparty
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers nagiosharder
