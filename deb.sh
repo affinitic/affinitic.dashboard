@@ -18,6 +18,12 @@ GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers httparty -- --rub
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers nagiosharder -- --ruby=/usr/bin/ruby1.9.1
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers github_api -- --ruby=/usr/bin/ruby1.9.1
 GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers twitter -- --ruby=/usr/bin/ruby1.9.1
+# Missing dependencies for dashing
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers backports -- --ruby=/usr/bin/ruby1.9.1
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers extlib -- --ruby=/usr/bin/ruby1.9.1
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers json -- --ruby=/usr/bin/ruby1.9.1
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers multi_json -- --ruby=/usr/bin/ruby1.9.1
+GEM_HOME=home/dashing gem install --no-ri --no-rdoc --wrappers thor -- --ruby=/usr/bin/ruby1.9.1
 mkdir -p etc/init.d
 cat <<EOF >etc/init.d/dashing
 #!/bin/sh
