@@ -10,7 +10,7 @@ cp -r public home/dashing/
 cp -r scripts home/dashing/
 cp -r widgets home/dashing/
 cd home/dashing
-bundle --path=gems
+bundle --path=.
 cd ../../
 mkdir -p etc/init.d
 cat <<EOF >etc/init.d/dashing
