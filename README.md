@@ -30,14 +30,7 @@ To get this dashboard working, you need to:
 *   After installing all the gems, do: `bundle install`
 
 *   sudo apt-get install nodejs
-*   Get some .json files:
-    
-    *   pwddashboard.json with `<server>, <login>, <pwd>`
-    *   pwdgithub.json with `<user>, <org>, <token>`
-    *   pwdgoogleapi.json with `<service_account_email>, <key_file>, <key_secret>, <profile_id>`
-    *   pwdgoogleapirss.json with `<service_account_email>, <key_file>, <key_secret>, <profile_id>`
-    *   urlbitbucket.json with `<url>`
-    *   urltrac.json with `<url>, <login>, <password>`
+*   Get some .json files
     
     If you get an Ruby error, try this: http://stackoverflow.com/questions/11058952/why-do-i-get-an-error-installing-the-json-gem-in-ubuntu
 
