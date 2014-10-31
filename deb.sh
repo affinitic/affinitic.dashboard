@@ -13,10 +13,5 @@ cd home/dashing
 bundle install --path=. --binstubs --deployment --standalone
 cd ../../
 mkdir -p etc/init.d
-cat <<EOF >etc/init.d/dashing
-#!/bin/sh
-set -e
-export GEM_HOME="/home/dashing"
-exec \${GEM_HOME}/bin/dashing \$@
-EOF
+cp init.sh etc/init.d/dashing
 chmod 755 etc/init.d/dashing
