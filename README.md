@@ -27,7 +27,7 @@ To get this dashboard working, you need to:
     *   gem 'faraday'
     *   gem 'httparty'
 
-*   After installing all the gems, do: `bundle install`
+*   After installing all the gems, do: `bundle install --path=. --binstubs`
 
 *   sudo apt-get install nodejs
 *   Get some .json files
