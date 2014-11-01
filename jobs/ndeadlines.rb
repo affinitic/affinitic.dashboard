@@ -28,13 +28,15 @@ SCHEDULER.every '100s', :first_in => 0 do
     deadlines = deadlines.sort { |a, b| a['date'] <=> b['date'] }
 
     deadlineOpen = []
-    
+    monthsLimit = 1
+    status = ''
+
     deadlines.each do |deadline|
         dl_date = Date.parse(deadline['date'])
-        dl_date_limit = Date.today.advance(:months => 1)
+        dl_date_limit = Date.today.advance(:months => monthsLimit)
 
         if deadline['closed'] == false && dl_date < dl_date_limit
-            if deadline['contractual'] == true 
+            if deadline['contractual'] == true
                 deadline['css']= 'contractual'
             end
             deadline['date'] = dl_date.strftime('%d-%m-%Y')
@@ -42,7 +44,12 @@ SCHEDULER.every '100s', :first_in => 0 do
         end
     end
 
+    if deadlineOpen.length == 0
+        status = 'Aucune deadline imminente (' + monthsLimit.to_s + ' mois)'
+    end
+
     send_event('ndeadlines',
-        deadline:deadlineOpen
+        {deadline: deadlineOpen,
+         status: status}
     )
 end
