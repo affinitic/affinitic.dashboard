@@ -2,8 +2,9 @@
     <div class="display-message">
         <table>
             <tr data-foreach-message="messages">
+                <td class="date" data-bind="message.date"></td>
                 <td class="nickname">
-                    <span data-bind="message.login"></span>:&nbsp;
+                    <span data-bind="message.login"></span>:
                 </td>
                 <td class="message" data-bind="message.message"></td>
             </tr>

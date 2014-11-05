@@ -32,11 +32,15 @@ $background-color:  #9c4274;
     overflow-y: hidden;
   }
 
-  td.nickname{
-      width: 100px;
+  td.date{
       vertical-align: top;
+	  padding-right: 5px;
   }
 
+  td.nickname{
+      vertical-align: top;
+	  padding-right: 5px;
+  }
 }
 
 // Allow to overflow div in display: table-cell;
