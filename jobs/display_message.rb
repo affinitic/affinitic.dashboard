@@ -25,8 +25,15 @@ end
 
 SCHEDULER.every '60s', :first_in => 0 do
     messages = get_json_for_nouzotre_dashboard_messages()
+    messages.each do |message|
+      message['date'] = DateTime.strptime(message['date'], '%d-%m-%Y')
+    end
 
+    messagesSorted = messages.sort_by{|k| k['date']}.reverse
+    messagesSorted.each do |message|
+      message['date'] = message['date'].strftime('%d/%m')
+    end
     send_event('display',
-        messages:messages
+        messages:messagesSorted
     )
 end
