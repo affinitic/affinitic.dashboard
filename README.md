@@ -46,6 +46,12 @@ Run::
   bin/dashing start
 
 
+Continuous deployment
+---------------------
+
+In our jenkins: http://jenkins.affinitic.be/jenkins/job/affinitic-dashing-deb/
+
+
 If you have problem while installing nokorigi
 ---------------------------------------------
 
