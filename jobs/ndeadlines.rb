@@ -28,7 +28,7 @@ SCHEDULER.every '100s', :first_in => 0 do
     deadlines = deadlines.sort { |a, b| a['date'] <=> b['date'] }
 
     deadlineOpen = []
-    monthsLimit = 1
+    monthsLimit = 2
     status = ''
 
     deadlines.each do |deadline|

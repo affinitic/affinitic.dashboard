@@ -34,6 +34,23 @@ To get this dashboard working, you need to:
     
     If you get an Ruby error, try this: http://stackoverflow.com/questions/11058952/why-do-i-get-an-error-installing-the-json-gem-in-ubuntu
 
+*   Define the passwords files, or import it from production:
+
+    rsync -av dashboard.affinitic.be:/home/dashing/pass .
+
+To start the dashboard:
+-----------------------
+
+Run::
+
+  bin/dashing start
+
+
+Continuous deployment
+---------------------
+
+In our jenkins: http://jenkins.affinitic.be/jenkins/job/affinitic-dashing-deb/
+
 
 If you have problem while installing nokorigi
 ---------------------------------------------
