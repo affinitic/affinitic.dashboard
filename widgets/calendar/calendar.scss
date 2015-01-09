@@ -1,0 +1,64 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color: #4cbcb3;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+div.widget-calendar {
+
+  background-color: $background-color;
+  text-align: left;
+  padding-bottom: 0px;
+  color: white;
+  height: 100%;
+  position: relative;
+
+  .title{
+    font-size:30px;
+    margin-bottom: 25px;
+  }
+
+  .eventtitle{
+    padding-left:20px;
+    font-size:1em;
+    font-weight: 800;
+  }
+
+  .eventdate{
+    padding-left:40px;
+    font-size:1em;
+  }
+
+  .contractual{
+    text-decoration: underline;
+  }
+
+  img{
+    width:25px;
+    height:25px;
+  }
+
+  td {
+    vertical-align:top;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+// Allow to overflow div in display: table-cell;
+div.widget-calendar-absolute {
+  padding-top: 25px;
+  position: absolute;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
