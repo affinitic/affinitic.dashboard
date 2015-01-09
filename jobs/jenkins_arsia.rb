@@ -2,21 +2,23 @@ require 'net/http'
 require 'json'
 require 'time'
 
-myfile = File.open('pass/pwddashboard.json', 'r')
+myfile = File.open('pass/jenkinsarsia.json', 'r')
 myobject = JSON.parse(myfile.read)
-JENKINS_URI = URI.parse(myobject['server'])
+JENKINS_ARSIA_URI = URI.parse(myobject['server'])
 
-JENKINS_AUTH = {
+JENKINS_ARSIA_AUTH = {
   'name' => myobject["login"],
   'password' => myobject["pwd"]
 }
 
-def get_json_for_master_jenkins_affinitic()
-    http = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
-    request = Net::HTTP::Get.new("/jenkins/api/json?pretty=true")
+def get_json_for_master_jenkins_arsia()
+    http = Net::HTTP.new(JENKINS_ARSIA_URI.host,
+                         JENKINS_ARSIA_URI.port,
+                         :use_ssl => true)
+    request = Net::HTTP::Get.new("/api/json?pretty=true")
 
-    if JENKINS_AUTH['name']
-        request.basic_auth(JENKINS_AUTH['name'], JENKINS_AUTH['password'])
+    if JENKINS_ARSIA_AUTH['name']
+        request.basic_auth(JENKINS_ARSIA_AUTH['name'], JENKINS_ARSIA_AUTH['password'])
     end
     response = http.request(request)
     JSON.parse(response.body)
@@ -25,7 +27,7 @@ end
 
 SCHEDULER.every '100s', :first_in => 0 do |job|
     # Recupere informations sur jenkins
-    thom = get_json_for_master_jenkins_affinitic()
+    thom = get_json_for_master_jenkins_arsia()
 
     # Cree une liste contenant uniquement les jobs jaune et rouge
     redyellowjobs = []
@@ -48,7 +50,7 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
 
     end
 
-    send_event('master_jobs',
+    send_event('jenkins_arsia',
         jobs: redyellowjobs[0..17],
         yellowcount: yellowjobs,
         redcount:redjobs,
