@@ -7,10 +7,14 @@ require 'cgi'
 # Config
 # make sure your URLs end with /full, not /simple (which is default)!
 # ------
-calendars = [{name: 'Private', url: 'https://www.google.com/calendar/feeds/gillian.sampont%40gmail.com/private-fd8af6600f8654a9025605f6a9acc0d8/basic'}]
+
+myfile = File.open('pass/calendar.json', 'r')
+myobject = JSON.parse(myfile.read)
+
+calendars = [{name: 'Private', url: myobject['url']}]
 events = Array.new
 
-SCHEDULER.every '30s', :first_in => 0 do |job|
+SCHEDULER.every '100s', :first_in => 0 do |job|
 	events = Array.new
 	min = CGI.escape(DateTime.now().to_s)
 	max = CGI.escape((DateTime.now()+7).to_s)
