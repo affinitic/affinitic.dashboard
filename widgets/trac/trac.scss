@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #424242;
+$background-color:  #8bb73f;
 
 $title-color:       white;
 $moreinfo-color:    white;
@@ -17,18 +17,56 @@ $moreinfo-color:    white;
   color: white;
   font-weight: 400;
 
-  .arsia-blocker {
-    margin-top:50px;
-    text-align: center;
-    font-size:80px;
-    font-weight:bold;
-    height:155px;
-  }
-
   .title{
     font-size:30px;
     margin-bottom: 25px;
   }
+
+  .affinitic-h3{
+    padding-top:20px;
+    padding-left:30px;
+    text-align:left;
+    width:180px;
+  }
+
+  .affinitic-value{
+    font-size:40px;
+    width:60px;
+    position:relative;
+    left:210px;
+    top:-45px;
+  }
+
+  .arsia-h3{
+    padding-top:20px;
+    padding-left:30px;
+    text-align:left;
+    width:180px;
+  }
+
+  .arsia-value{
+    font-size:40px;
+    width:60px;
+    position:relative;
+    left:210px;
+    top:-45px;
+  }
+
+  .cadredeville-h3{
+    padding-top:20px;
+    padding-left:30px;
+    text-align:left;
+    width:180px;
+  }
+
+  .cadredeville-value{
+    font-size:40px;
+    width:60px;
+    position:relative;
+    left:210px;
+    top:-45px;
+  }
+
 
 }
 
@@ -39,13 +77,13 @@ $moreinfo-color:    white;
 
 div.blocker_tickets{
     background-color:#D23125;
-    height:100%;
+    height:80px;
     width:100%;
 }
 
 div.alright{
     background-color:#8bb73f;
-    height:100%;
+    height:80px;
     width:100%;
 }
 
@@ -53,11 +91,7 @@ div.trac-content{
     padding-top: 25px;
 }
 
-h3.arsiah3{
-    padding-top:40px;
-}
-
 .valeur{
-    padding-top:20px;
-    font-size:4.3em;
+    padding-top:2px;
+    font-size:40px;
 }

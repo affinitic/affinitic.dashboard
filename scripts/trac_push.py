@@ -3,12 +3,14 @@ import requests
 import argparse
 
 
-#enter trac-something
+# enter trac-something
 
 def get_args():
     parser = argparse.ArgumentParser(description='You need to add some arguments here.')
-    parser.add_argument('-t', '--tracname', required=True, choices=['trac-arsia', 'trac-affinitic'])
-    parser.add_argument('-v', '--value', type=str, required=True)
+    parser.add_argument('-t', '--tracname', required=True, choices=['trac-merged'])
+    parser.add_argument('--arsiavalue', type=str, required=True)
+    parser.add_argument('--affiniticvalue', type=str, required=True)
+    parser.add_argument('--cadredevillevalue', type=str, required=True)
 
     print parser.parse_args()
     return parser.parse_args()
@@ -19,14 +21,22 @@ dashboard_url = "http://localhost:3030"
 widget_url = dashboard_url + '/widgets/' + args.tracname
 
 
+datas = {"arsia": {"value": args.arsiavalue,
+                   "class": "blocker_tickets",
+                   "href": "http://trac.arsia.affinitic.be/trac/query?priority=blocker&status=in+analysis&status=in+development&status=in+testing&status=new&status=ready+for+production&status=reopened&col=id&col=summary&col=priority&col=owner&col=type&col=status&col=milestone&order=priority"},
+         "affinitic": {"value": args.affiniticvalue,
+                       "class": "blocker_tickets",
+                       "href": "http://trac.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
+         "cadredeville": {"value": args.cadredevillevalue,
+                          "class": "blocker_tickets",
+                          "href": "http://trac.cadredeville.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
+         }
 
-datas = {"value": args.value,
-         "class": "blocker_tickets",
-         "text": "Blocker tickets"}
 
-if datas['value'] == '0':
-    datas['class'] = 'alright'
-    datas['text'] = 'No problem'
+for client in datas:
+    if datas[client]['value'] == '0':
+        datas[client]['class'] = 'alright'
+        datas[client]['text'] = 'No problem'
 
 myfile = open('pass/configru.json')
 myinfo = json.load(myfile)
