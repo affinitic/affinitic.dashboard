@@ -28,7 +28,7 @@ SCHEDULER.every '100s', :first_in => 0 do |job|
 			content = e.at_xpath("./content").text
 			when_node = e.at_xpath("./when")
 			events.push({title: title,
-				body: content ? content.split("\n").first.split("Date : ").last : "",
+				body: content ? content.split("\n").first.sub('&lt;br&gt;', '') : "",
 				calendar: calendar[:name],
 				when_start_raw: when_node ? DateTime.iso8601(when_node.attribute('startTime').text).to_time.to_i : 0,
 				when_end_raw: when_node ? DateTime.iso8601(when_node.attribute('endTime').text).to_time.to_i : 0,
