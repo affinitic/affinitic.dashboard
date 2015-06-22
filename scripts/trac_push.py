@@ -11,6 +11,8 @@ def get_args():
     parser.add_argument('--arsiavalue', type=str, required=True)
     parser.add_argument('--affiniticvalue', type=str, required=True)
     parser.add_argument('--cadredevillevalue', type=str, required=True)
+    parser.add_argument('--sprbvalue', type=str, required=True)
+    parser.add_argument('--cirbvalue', type=str, required=True)
 
     print parser.parse_args()
     return parser.parse_args()
@@ -30,7 +32,14 @@ datas = {"arsia": {"value": args.arsiavalue,
          "cadredeville": {"value": args.cadredevillevalue,
                           "class": "blocker_tickets",
                           "href": "http://trac.cadredeville.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
-         }
+         "SPRB": {
+             "value": args.sprbvalue,
+             "class": "blocker_tickets",
+             "href": "http://trac.sprb.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
+         "CIRB": {
+             "value": args.cirbvalue,
+             "class": "blocker_tickets",
+             "href": "http://trac.cirb.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"}}
 
 
 for client in datas:
