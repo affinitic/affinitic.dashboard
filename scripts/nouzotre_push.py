@@ -10,7 +10,7 @@ datas = {
         "name": "Finir menu",
         "status": "opened/closed",
         "contractual": "True/False",
-        "url": "http://www.nouzotre.affinitic.be"
+        "url": "https://www.nouzotre.affinitic.be"
     }],
     "hoursOfWork":[{
         "login": "alain",
