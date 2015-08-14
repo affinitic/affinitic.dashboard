@@ -13,6 +13,7 @@ NOUZOTRE_AUTH_NOUZOTRE ||= {
 
 def get_json_for_nouzotre()
     http = Net::HTTP.new(NOUZOTRED_URI_NOUZOTRE.host, NOUZOTRED_URI_NOUZOTRE.port)
+    http.use_ssl = true
     request = Net::HTTP::Get.new("/last-encodages-json")
 
     if NOUZOTRE_AUTH_NOUZOTRE['name']

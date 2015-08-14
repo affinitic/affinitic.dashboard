@@ -14,6 +14,7 @@ NOUZOTRE_AUTH_NDEADLINES ||= {
 
 def get_json_for_nouzotreDeadlines()
     http = Net::HTTP.new(NOUZOTRE_URI_NDEADLINES.host, NOUZOTRE_URI_NDEADLINES.port)
+    http.use_ssl = true
     request = Net::HTTP::Get.new("/next-deadlines-json")
 
     if NOUZOTRE_AUTH_NDEADLINES['name']

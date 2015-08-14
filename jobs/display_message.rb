@@ -14,6 +14,7 @@ NOUZOTRE_AUTH_DISPLAY ||= {
 
 def get_json_for_nouzotre_dashboard_messages()
     http = Net::HTTP.new(NOUZOTRE_URI_DISPLAY.host, NOUZOTRE_URI_DISPLAY.port)
+    http.use_ssl = true
     request = Net::HTTP::Get.new("/messages-json")
 
     if NOUZOTRE_AUTH_DISPLAY['name']
