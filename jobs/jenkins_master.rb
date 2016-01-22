@@ -13,7 +13,8 @@ JENKINS_AUTH = {
 
 def get_json_for_master_jenkins()
     http = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
-    request = Net::HTTP::Get.new("/jenkins/api/json?pretty=true")
+    http.use_ssl = true
+    request = Net::HTTP::Get.new("/api/json?pretty=true")
 
     if JENKINS_AUTH['name']
         request.basic_auth(JENKINS_AUTH['name'], JENKINS_AUTH['password'])
