@@ -1,5 +1,8 @@
+#!/bin/bash -xe
+
 mkdir -p home/dashing
 cp -r Gemfile home/dashing/
+cp -r Gemfile.lock home/dashing/
 cp -r README.md home/dashing/
 cp -r assets home/dashing/
 cp -r config.ru home/dashing/
