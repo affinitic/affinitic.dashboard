@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 require 'time'
+require 'digest'
 
 myfile = File.open('pass/getnouzotrejson.json', 'r')
 myobject = JSON.parse(myfile.read)
@@ -29,7 +30,9 @@ SCHEDULER.every '100s', :first_in => 0 do
 
     lastEncodage.each do |badworker|
         if badworker['days'] >= 2
-            badworker['picture'] = 'assets/'+ badworker['login']+'.jpg'
+            email = badworker['email']
+            gravatar_id = Digest::MD5.hexdigest(email.downcase)
+            badworker['picture'] = 'http://www.gravatar.com/avatar/' + gravatar_id + '.jpg'
             notEncodedWorker.push(badworker)
         end
     end
