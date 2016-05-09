@@ -5,6 +5,7 @@ require 'time'
 myfile = File.open('pass/pwddashboard.json', 'r')
 myobject = JSON.parse(myfile.read)
 JENKINS_URI = URI.parse(myobject['server'])
+JENKINS_VIEW = myobject["view"]
 
 JENKINS_AUTH = {
   'name' => myobject["login"],
@@ -13,8 +14,7 @@ JENKINS_AUTH = {
 
 def get_json_for_master_jenkins()
     http = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
-    http.use_ssl = true
-    request = Net::HTTP::Get.new("/api/json?pretty=true")
+    request = Net::HTTP::Get.new("/view/" + JENKINS_VIEW + "/api/json?pretty=true")
 
     if JENKINS_AUTH['name']
         request.basic_auth(JENKINS_AUTH['name'], JENKINS_AUTH['password'])
