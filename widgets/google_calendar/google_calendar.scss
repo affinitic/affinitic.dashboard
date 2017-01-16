@@ -15,20 +15,21 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   background-color: $background-color;
   .subtitle {
   color: $subtitle-color;
-  font-size: 0.75em;
+  font-size: 1.25em;
   margin: 15px 0;
   }
   .title {
     color: $title-color;
     font-size: 1.4em;
+    text-transform: none;
   }
 
   .times {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
 
   .next {
-    font-size: 0.75em;
+    font-size: 1em;
     margin-top: 30px;
     .tr {
       border-bottom: 1px solid $subtitle-color;
@@ -53,4 +54,9 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   &.large h3 {
     font-size: 65px;
   }
+
+  .summary {
+	text-align: left;
+  }
+
 }

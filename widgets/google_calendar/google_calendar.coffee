@@ -12,14 +12,18 @@ class Dashing.GoogleCalendar extends Dashing.Widget
     end = moment(event.end)
 
     @set('event',event)
-    @set('event_date', start.format('dddd Do MMMM'))
-    @set('event_times', start.format('HH:mm') + " - " + end.format('HH:mm'))
+    @set('event_date', start.format('DD/MM/YY'))
+    @set('event_times', "de " + start.format('H[h]mm') + " à " + end.format('H[h]mm'))
 
     next_events = []
     for next_event in rest
       start = moment(next_event.start)
-      start_date = start.format('Do MMM')
-      start_time = start.format('HH:mm')
+      start_date = start.format('DD/MM')
+      start_time = start.format('H[h]mm')
+      if start_time == '0h00'
+         start_time = ''
+      else
+         start_time = 'à ' + start_time
 
       next_events.push { summary: next_event.summary, start_date: start_date, start_time: start_time }
     @set('next_events', next_events)
