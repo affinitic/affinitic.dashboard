@@ -1,6 +1,7 @@
 <h1 class="subtitle" >Prochain événement:</h1>
+<div class="icon-calendar"></div>
 <h3 class="times">
-    <span data-bind="event_date" /> - 
+    <span data-bind="event_date" />
     <span data-bind="event_times" />
 </h3>
 <h2 class="title">« <span data-bind="event.summary" /> »</h2>
@@ -8,8 +9,10 @@
 
 <table class="next">
   <tr data-foreach-e='next_events'>
-    <td data-bind="e.start_date"></td>
-    <td data-bind="e.start_time"></td>
+    <td>
+      <span data-bind="e.start_date" />
+      <span data-bind="e.start_time" />
+    </td>
     <td class="summary" data-bind="e.summary"></td>
   </tr>
 </table>
