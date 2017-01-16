@@ -10,7 +10,6 @@ def get_args():
     parser.add_argument('-t', '--tracname', required=True, choices=['trac-merged'])
     parser.add_argument('--arsiavalue', type=str, required=True)
     parser.add_argument('--affiniticvalue', type=str, required=True)
-    parser.add_argument('--cadredevillevalue', type=str, required=True)
     parser.add_argument('--sprbvalue', type=str, required=True)
     parser.add_argument('--cirbvalue', type=str, required=True)
 
@@ -29,9 +28,6 @@ datas = {"arsia": {"value": args.arsiavalue,
          "affinitic": {"value": args.affiniticvalue,
                        "class": "blocker_tickets",
                        "href": "http://trac.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
-         "cadredeville": {"value": args.cadredevillevalue,
-                          "class": "blocker_tickets",
-                          "href": "http://trac.cadredeville.affinitic.be/trac/query?priority=blocker&status=accepted&status=assigned&status=new&status=reopened&col=id&col=summary&col=status&col=type&col=priority&col=severity&col=time&order=priority&report=7"},
          "SPRB": {
              "value": args.sprbvalue,
              "class": "blocker_tickets",

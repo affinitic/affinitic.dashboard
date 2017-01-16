@@ -4,7 +4,6 @@ class Dashing.trac extends Dashing.Widget
         super
         @old_data_affinitic = ''
         @old_data_arsia = ''
-        @old_data_cadredeville = ''
 
     onData: (data) ->
 
@@ -27,16 +26,6 @@ class Dashing.trac extends Dashing.Widget
                 @enlarge()
 
         @old_data_arsia = new_data_arsia
-
-        new_data_cadredeville = data.item.cadredeville.value
-        # Data changed
-        if @old_data_cadredeville != new_data_cadredeville
-            # Do not expose at page load
-
-            if @old_data_cadredeville != ''
-                @enlarge()
-
-        @old_data_cadredeville = new_data_cadredeville
 
     enlarge: ->
         el = $(@node).parent()
