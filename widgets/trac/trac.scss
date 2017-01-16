@@ -30,19 +30,19 @@ $moreinfo-color:    white;
   }
 
   .value{
-    font-size:40px;
+    font-size:30px;
     width:60px;
     position:relative;
     left:185px;
-    top:-45px;
+    top:-38px;
   }
 
   .doublevalue{
-    font-size:40px;
-    width:120px;
+    font-size:30px;
+    width:104px;
     position:relative;
     left:185px;
-    top:-45px;
+    top:-38px;
   }
 
 }
@@ -54,14 +54,16 @@ $moreinfo-color:    white;
 
 div.blocker_tickets{
     background-color:#D23125;
-    height:50px;
+    height:48px;
     width:100%;
+    border-bottom: 1px dashed #AEE54E;
 }
 
 div.alright{
     background-color:#8bb73f;
-    height:50px;
+    height:48px;
     width:100%;
+    border-bottom: 1px dashed #AEE54E;
 }
 
 div.trac-content{
