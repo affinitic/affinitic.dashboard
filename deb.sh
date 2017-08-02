@@ -8,6 +8,7 @@ cp -r assets home/dashing/
 cp -r config.ru home/dashing/
 cp -r dashboards home/dashing/
 cp -r jobs home/dashing/
+cp -r lib home/dashing/
 cp -r pass home/dashing/
 cp -r public home/dashing/
 cp -r scripts home/dashing/
