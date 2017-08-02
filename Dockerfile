@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y libxml2-dev ruby ruby-dev make gcc g++ 
 COPY Gemfile /dashing/Gemfile
 COPY config.ru /dashing/config.ru
 ENV HOME=/dashing
-RUN gem install dashing
 RUN gem install bundler 
 RUN gem install nokogiri -q --no-rdoc --no-ri -v "1.6.5" -- --use-system-libraries --with-xml2-include=/usr/include/libxml2
 RUN bundle config build.nokogiri --use-system-libraries --with-xml2-include=/usr/include/libxml2
