@@ -15,6 +15,5 @@ cp -r widgets home/dashing/
 cd home/dashing
 bundle install --path=. --binstubs --deployment --standalone
 cd ../../
-mkdir -p etc/init.d
-cp init.sh etc/init.d/dashing
-chmod 755 etc/init.d/dashing
+mkdir -p etc/systemd/system
+cp dashing.unit etc/systemd/system

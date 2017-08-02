@@ -1,0 +1,10 @@
+[Unit]
+Description=Dashing Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/dashing
+ExecStart=/home/dashing/bin/dashing start -d -p 3030 -P /home/dashing/dashing.pid --tag dashing -D
+
+[Install]
+WantedBy=multi-user.target
