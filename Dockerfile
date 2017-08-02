@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 WORKDIR /dashing
-RUN apt-get update && apt-get install -y libxml2-dev ruby ruby-dev make gcc g++ zlib1g zlib1g-dev libxml2 liblzma-dev libxslt-dev software-properties-common python-software-properties
+RUN apt-get update && apt-get install -y libxml2-dev ruby ruby-dev make gcc g++ zlib1g zlib1g-dev libxml2 liblzma-dev libxslt-dev software-properties-common python-software-properties git
 COPY Gemfile /dashing/Gemfile
 COPY config.ru /dashing/config.ru
 ENV HOME=/dashing
