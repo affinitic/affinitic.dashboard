@@ -18,14 +18,14 @@ To get this dashboard working, you need to:
 
 *   Install ruby 1.9+
 *   Get some ruby gems:
-    
-    *   gem 'dashing'
-    *   gem 'rest-client'
-    *   gem 'google-api-client'
-    *   gem 'nokogiri'
-    *   gem 'htmlentities'
-    *   gem 'faraday'
-    *   gem 'httparty'
+    *   `sudo gem install dashing`
+    *   `sudo gem install rest-client`
+    *   `sudo gem install google-api-client`
+    *   `sudo gem install nokogiri`
+    *   `sudo gem install htmlentities`
+    *   `sudo gem install faraday`
+    *   `sudo gem install httparty`
+    *   `sudo gem install bundler`
 
 *   After installing all the gems, do: `bundle install --path=. --binstubs`
 
@@ -35,8 +35,7 @@ To get this dashboard working, you need to:
     If you get an Ruby error, try this: http://stackoverflow.com/questions/11058952/why-do-i-get-an-error-installing-the-json-gem-in-ubuntu
 
 *   Define the passwords files, or import it from production:
-
-    rsync -av dashboard.affinitic.be:/home/dashing/pass .
+    `rsync -av dashboard.affinitic.be:/home/dashing/pass .`
 
 To start the dashboard:
 -----------------------
